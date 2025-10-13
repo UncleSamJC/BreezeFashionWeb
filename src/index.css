@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Navbar - no shadow */
+nav {
+  box-shadow: none;
+}
+
+
+/* Custom button hover effect */
+.button-hover-effect {
+  @apply relative overflow-hidden;
+}
+
+.button-hover-effect::after {
+  content: '';
+  @apply absolute inset-0 bg-black bg-opacity-0 transition-opacity duration-300;
+}
+
+.button-hover-effect:hover::after {
+  @apply bg-opacity-5;
+}
