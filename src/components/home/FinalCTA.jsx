@@ -55,13 +55,13 @@ function FinalCTA() {
             letterSpacing: typography.letterSpacing.tight,
           }}
         >
-          Let NobleLaw Be Your<br />
-          Trusted Legal Partner
+          Let Breeze Fashion Be Your<br />
+          Trusted Manufacturing Partner
         </h2>
 
         {/* 按钮组 */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <PrimaryButton>Book Consultant</PrimaryButton>
+          <PrimaryButton>Request Quote</PrimaryButton>
           <SecondaryButton>Our Services</SecondaryButton>
         </div>
       </div>

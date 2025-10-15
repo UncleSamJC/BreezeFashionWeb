@@ -47,8 +47,8 @@ function AboutSection() {
                 letterSpacing: typography.letterSpacing.tight,
               }}
             >
-              Your Trusted Partner for Reliable{' '}
-              <span style={{ color: '#c9a668' }}>Legal Solutions</span>
+              Your Trusted Partner for Premium{' '}
+              <span style={{ color: '#c9a668' }}>Apparel Manufacturing</span>
             </h2>
 
             <p
@@ -59,7 +59,7 @@ function AboutSection() {
                 lineHeight: '1.7',
               }}
             >
-              As a law firm with a solid reputation, we are committed to providing reliable and solution-oriented legal services. Focused on our clients' needs, we ensure that every solution is crafted to safeguard both business and personal interests.
+              As an apparel manufacturer with a solid reputation, we are committed to providing reliable and solution-oriented OEM services. Focused on our clients' needs, we ensure that every garment is crafted to meet both quality standards and market demands.
             </p>
 
             <button

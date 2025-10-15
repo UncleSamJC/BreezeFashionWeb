@@ -2,14 +2,14 @@ import { colors, typography } from '../../lib/designTokens';
 
 function TeamPreview() {
   const teamMembers = [
-    { name: 'Emily Carter', role: 'Senior Partner', image: '/placeholder-team-1.jpg' },
-    { name: 'James Wilson', role: 'Senior Partner', image: '/placeholder-team-2.jpg' },
-    { name: 'Sophia Anderson', role: 'Senior Partner', image: '/placeholder-team-3.jpg' },
-    { name: 'Daniel Martinez', role: 'Legal Advisor', image: '/placeholder-team-4.jpg' },
-    { name: 'Olivia Brown', role: 'Senior Partner', image: '/placeholder-team-5.jpg' },
-    { name: 'William Davis', role: 'Senior Partner', image: '/placeholder-team-6.jpg' },
-    { name: 'Ava Johnson', role: 'Senior Partner', image: '/placeholder-team-7.jpg' },
-    { name: 'Robert Smith', role: 'Senior Partner', image: '/placeholder-team-8.jpg' },
+    { name: 'Emily Carter', role: 'Operations Director', image: '/placeholder-team-1.jpg' },
+    { name: 'James Wilson', role: 'Production Manager', image: '/placeholder-team-2.jpg' },
+    { name: 'Sophia Anderson', role: 'Quality Director', image: '/placeholder-team-3.jpg' },
+    { name: 'Daniel Martinez', role: 'Business Advisor', image: '/placeholder-team-4.jpg' },
+    { name: 'Olivia Brown', role: 'Design Coordinator', image: '/placeholder-team-5.jpg' },
+    { name: 'William Davis', role: 'Supply Chain Manager', image: '/placeholder-team-6.jpg' },
+    { name: 'Ava Johnson', role: 'Client Relations', image: '/placeholder-team-7.jpg' },
+    { name: 'Robert Smith', role: 'Technical Director', image: '/placeholder-team-8.jpg' },
   ];
 
   return (
@@ -64,7 +64,7 @@ function TeamPreview() {
               Introducing Our Experienced<br />
               Team of{' '}
             </span>
-            <span style={{ color: colors.primary }}>Legal Professionals</span>
+            <span style={{ color: colors.primary }}>Industry Professionals</span>
           </h2>
         </div>
 
@@ -112,7 +112,7 @@ function TeamPreview() {
                   fontFamily: typography.fontFamily.body,
                 }}
               >
-                Book Consultant
+                Contact Specialist
               </button>
             </div>
           ))}

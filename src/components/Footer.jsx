@@ -39,7 +39,7 @@ function Footer() {
                 }}
                 className="font-normal leading-relaxed"
               >
-                "Navigating Complex Legal Challenges with Integrity, Expertise, and a Commitment to Delivering Exceptional Solutions."
+                "Transforming Design Visions into Quality Garments with Integrity, Expertise, and a Commitment to Delivering Exceptional Manufacturing Solutions."
               </p>
             </div>
           </div>

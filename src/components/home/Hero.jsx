@@ -45,7 +45,7 @@ function Hero() {
             letterSpacing: typography.letterSpacing.tight,
           }}
         >
-          Expertise, Integrity, Results, Tailored Legal Solutions
+          Quality, Innovation, Excellence in Apparel Manufacturing
         </h1>
 
         <p
@@ -56,11 +56,11 @@ function Hero() {
             lineHeight: '1.7',
           }}
         >
-          With proven expertise and strategic approaches, we stand as your trusted legal partner to support your success.
+          With proven expertise and advanced manufacturing capabilities, we stand as your trusted apparel partner to bring your designs to life.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <PrimaryButton>Book Consultant</PrimaryButton>
+          <PrimaryButton>Request Quote</PrimaryButton>
           <SecondaryButton>Our Services</SecondaryButton>
         </div>
       </div>

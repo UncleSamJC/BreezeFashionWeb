@@ -5,50 +5,50 @@ function TeamGrid() {
   const teamMembers = [
     {
       name: 'Emily Carter',
-      role: 'Senior Partner',
-      description: 'With an exceptional eye for detail and a passion for justice, Emily leads our corporate law division with proven expertise.',
+      role: 'Operations Director',
+      description: 'With an exceptional eye for detail and a passion for excellence, Emily leads our manufacturing operations with proven expertise.',
       image: null
     },
     {
       name: 'James Wilson',
-      role: 'Senior Partner',
-      description: 'Specializing in intellectual property and litigation, James brings over 20 years of experience to complex legal challenges.',
+      role: 'Production Manager',
+      description: 'Specializing in production planning and quality control, James brings over 20 years of experience to complex manufacturing challenges.',
       image: null
     },
     {
       name: 'Sophia Anderson',
-      role: 'Senior Partner',
-      description: 'A strategic thinker with extensive experience in mergers and acquisitions, Sophia ensures seamless business transitions.',
+      role: 'Quality Director',
+      description: 'A strategic thinker with extensive experience in quality assurance and compliance, Sophia ensures seamless production excellence.',
       image: null
     },
     {
       name: 'Daniel Martinez',
-      role: 'Legal Advisor',
-      description: 'Daniel provides expert counsel on regulatory compliance and risk management across various industries.',
+      role: 'Business Advisor',
+      description: 'Daniel provides expert counsel on production optimization and supply chain management across various product lines.',
       image: null
     },
     {
       name: 'Olivia Brown',
-      role: 'Senior Partner',
-      description: 'Focusing on employment law and dispute resolution, Olivia advocates fiercely for client rights and interests.',
+      role: 'Design Coordinator',
+      description: 'Focusing on design collaboration and pattern development, Olivia works closely with clients to bring their visions to reality.',
       image: null
     },
     {
       name: 'William Davis',
-      role: 'Senior Partner',
-      description: 'With a background in international law, William navigates cross-border legal complexities with ease and precision.',
+      role: 'Supply Chain Manager',
+      description: 'With a background in international logistics, William navigates cross-border sourcing and shipping complexities with ease and precision.',
       image: null
     },
     {
       name: 'Ava Johnson',
-      role: 'Senior Partner',
-      description: 'Ava specializes in estate planning and family law, providing compassionate guidance during critical life transitions.',
+      role: 'Client Relations',
+      description: 'Ava specializes in client communication and project management, providing dedicated support throughout the entire production process.',
       image: null
     },
     {
       name: 'Robert Smith',
-      role: 'Senior Partner',
-      description: 'A seasoned litigator with a track record of successful outcomes in high-stakes commercial disputes.',
+      role: 'Technical Director',
+      description: 'A seasoned technical expert with a track record of successful outcomes in high-volume production challenges.',
       image: null
     },
   ];

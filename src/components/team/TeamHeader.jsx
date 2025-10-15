@@ -17,7 +17,7 @@ function TeamHeader() {
           }}
         >
           Meet Our Expert<br />
-          Legal Team
+          Manufacturing Team
         </h1>
 
         <p
@@ -29,7 +29,7 @@ function TeamHeader() {
           }}
         >
           Our dedicated professionals bring years of experience and unwavering commitment
-          to achieving the best outcomes for our clients.
+          to delivering the highest quality products for our clients.
         </p>
       </div>
     </section>

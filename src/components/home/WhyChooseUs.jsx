@@ -4,18 +4,18 @@ function WhyChooseUs() {
   const attributes = [
     {
       icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1adf84997b44f076803_08dbb3cd-14d4-4ae5-8212-44c0247b164f.png',
-      title: 'Proven Expertis',
-      description: 'Our team of seasoned legal experts brings extensive knowledge and experience to navigate complex regulatory challenges effectively.'
+      title: 'Proven Expertise',
+      description: 'Our team of seasoned manufacturing experts brings extensive knowledge and experience to navigate complex production challenges effectively.'
     },
     {
       icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ada682f9bde562529f_08dbb3cd-14d4-4ae5-8212-44c0247b164f-1.png',
       title: 'Proven Track Record',
-      description: 'With years of success in handling complex legal matters, we have earned a reputation for delivering effective and timely results.'
+      description: 'With years of success in handling complex apparel production, we have earned a reputation for delivering high-quality products and timely delivery.'
     },
     {
       icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ada8e69583e96e0887_08dbb3cd-14d4-4ae5-8212-44c0247b164f-2.png',
       title: 'Tailored Approach',
-      description: 'Expertly Tailored Legal Solutions Designed to Meet Your Unique, Specific Needs and Drive Meaningful Outcomes'
+      description: 'Custom Manufacturing Solutions Designed to Meet Your Unique Brand Requirements and Drive Market Success'
     },
     {
       icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ad0d3994b9838a79dd_08dbb3cd-14d4-4ae5-8212-44c0247b164f-3.png',
@@ -88,9 +88,9 @@ function WhyChooseUs() {
               letterSpacing: typography.letterSpacing.tight,
             }}
           >
-            Trusted Legal Expertise for Your
+            Trusted Manufacturing Excellence for Your
             <br />
-             <span style={{ color: '#c9a668' }}>Peace of Mind</span>
+             <span style={{ color: '#c9a668' }}>Brand Success</span>
           </h2>
         </div>
 

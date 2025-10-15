@@ -32,9 +32,9 @@ function Mission() {
                 lineHeight: typography.lineHeight.normal,
               }}
             >
-              To deliver exceptional legal services that empower our clients to achieve
-              their goals with confidence. We are committed to excellence, integrity,
-              and building lasting partnerships based on trust and results.
+              To deliver exceptional apparel manufacturing services that empower our clients to achieve
+              their brand goals with confidence. We are committed to excellence, integrity,
+              and building lasting partnerships based on trust and quality results.
             </p>
           </div>
 
@@ -55,7 +55,7 @@ function Mission() {
             </h2>
 
             <ul className="space-y-3">
-              {['Integrity', 'Excellence', 'Client Focus', 'Innovation', 'Accountability'].map((value, index) => (
+              {['Quality', 'Excellence', 'Client Focus', 'Innovation', 'Reliability'].map((value, index) => (
                 <li
                   key={index}
                   className="flex items-center gap-3 text-base md:text-lg"

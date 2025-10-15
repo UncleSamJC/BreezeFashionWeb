@@ -6,24 +6,24 @@ function FAQ() {
 
   const faqs = [
     {
-      question: 'What services does NobleLaw offer?',
-      answer: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+      question: 'What services does Breeze Fashion offer?',
+      answer: 'Breeze Fashion offers comprehensive apparel manufacturing services including custom production, pattern making, sampling, quality control, and fabric sourcing for brands of all sizes.'
     },
     {
-      question: 'How can I schedule a consultation with NobleLaw?',
-      answer: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+      question: 'How can I request a quote from Breeze Fashion?',
+      answer: 'You can request a quote by contacting us through our website contact form, sending an email to our team, or calling our office. We will respond within 24 hours with initial pricing information.'
     },
     {
-      question: 'What industries does NobleLaw specialize in?',
-      answer: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+      question: 'What types of garments does Breeze Fashion specialize in?',
+      answer: 'We specialize in a wide range of apparel including casual wear, activewear, formal clothing, and custom designs. Our expertise covers everything from concept to finished product.'
     },
     {
-      question: 'Why should I choose NobleLaw?',
-      answer: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+      question: 'Why should I choose Breeze Fashion?',
+      answer: 'Breeze Fashion combines proven manufacturing expertise, quality assurance, competitive pricing, and reliable delivery times. We are committed to bringing your design vision to life with excellence.'
     },
     {
-      question: 'How much do your legal services cost?',
-      answer: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+      question: 'What are the minimum order quantities?',
+      answer: 'Our minimum order quantities vary depending on the garment type and complexity. Please contact us with your specific requirements for detailed MOQ information and pricing.'
     },
   ];
 

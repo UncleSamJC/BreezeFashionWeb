@@ -5,37 +5,37 @@ function Testimonials() {
     {
       name: 'Alecia Höpker',
       location: 'Kyoto Japan',
-      quote: 'From the very beginning, NobleLaw demonstrated a clear commitment to understanding our needs. Their legal advice and solutions were instrumental in driving our success and protecting our interests.',
+      quote: 'From the very beginning, Breeze Fashion demonstrated a clear commitment to understanding our needs. Their manufacturing expertise and quality solutions were instrumental in driving our success and building our brand.',
       image: '/placeholder-client-1.jpg'
     },
     {
       name: 'Artur Kopp',
       location: 'Kyoto Japan',
-      quote: 'From the very beginning, NobleLaw demonstrated a clear commitment to understanding our needs. Their legal advice and solutions were instrumental in driving our success and protecting our interests.',
+      quote: 'From the very beginning, Breeze Fashion demonstrated a clear commitment to understanding our needs. Their manufacturing expertise and quality solutions were instrumental in driving our success and building our brand.',
       image: '/placeholder-client-2.jpg'
     },
     {
       name: 'Alecia Höpker',
       location: 'Kyoto Japan',
-      quote: 'From the very beginning, NobleLaw demonstrated a clear commitment to understanding our needs. Their legal advice and solutions were instrumental in driving our success and protecting our interests.',
+      quote: 'From the very beginning, Breeze Fashion demonstrated a clear commitment to understanding our needs. Their manufacturing expertise and quality solutions were instrumental in driving our success and building our brand.',
       image: '/placeholder-client-1.jpg'
     },
     {
       name: 'Artur Kopp',
       location: 'Kyoto Japan',
-      quote: 'From the very beginning, NobleLaw demonstrated a clear commitment to understanding our needs. Their legal advice and solutions were instrumental in driving our success and protecting our interests.',
+      quote: 'From the very beginning, Breeze Fashion demonstrated a clear commitment to understanding our needs. Their manufacturing expertise and quality solutions were instrumental in driving our success and building our brand.',
       image: '/placeholder-client-2.jpg'
     },
     {
       name: 'Alecia Höpker',
       location: 'Kyoto Japan',
-      quote: 'From the very beginning, NobleLaw demonstrated a clear commitment to understanding our needs. Their legal advice and solutions were instrumental in driving our success and protecting our interests.',
+      quote: 'From the very beginning, Breeze Fashion demonstrated a clear commitment to understanding our needs. Their manufacturing expertise and quality solutions were instrumental in driving our success and building our brand.',
       image: '/placeholder-client-1.jpg'
     },
     {
       name: 'Artur Kopp',
       location: 'Kyoto Japan',
-      quote: 'From the very beginning, NobleLaw demonstrated a clear commitment to understanding our needs. Their legal advice and solutions were instrumental in driving our success and protecting our interests.',
+      quote: 'From the very beginning, Breeze Fashion demonstrated a clear commitment to understanding our needs. Their manufacturing expertise and quality solutions were instrumental in driving our success and building our brand.',
       image: '/placeholder-client-2.jpg'
     },
   ];

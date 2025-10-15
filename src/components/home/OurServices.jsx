@@ -7,29 +7,29 @@ function OurServices() {
   const services = [
     {
 
-      title: 'Business Legal Consultation',
-      description: 'Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.',
+      title: 'Custom Apparel Manufacturing',
+      description: 'Offering expert garment production from concept to completion, helping brands create high-quality clothing lines that meet market demands, maintain consistency, and achieve sustainable growth for lasting success.',
       image: 'https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67ca7547e76f54417170af76_image%2015.png',
       link: '/service/business-legal-consultation'
     },
     {
 
-      title: 'Dispute Resolution',
-      description: 'Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.',
+      title: 'Quality Control & Inspection',
+      description: 'Comprehensive quality assurance throughout the production process, ensuring every garment meets your specifications and industry standards, protecting your brand reputation and customer satisfaction.',
       image: 'https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67b550c07974e3eba43da26b_image%20(7).png',
       link: '/service/dispute-resolution'
     },
     {
 
-      title: 'Licensing and Contracts',
-      description: 'Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.',
+      title: 'Pattern Making & Sampling',
+      description: 'Professional pattern development and sample creation services, transforming your designs into production-ready templates with precision measurements, fit optimization, and material selection guidance.',
       image: 'https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67be8baf13bb4679af4a2de6_Rectangle%2045.png',
       link: '/service/licensing-and-contracts'
     },
     {
 
-      title: 'Intellectual Property Protection',
-      description: 'Offering expert legal guidance in corporate regulations and investment matters, helping businesses achieve compliance, mitigate risks, protect assets, and foster sustainable growth for lasting success.',
+      title: 'Fabric Sourcing & Development',
+      description: 'Strategic fabric sourcing and custom textile development services, connecting you with quality suppliers, managing material procurement, and ensuring cost-effective solutions for your production needs.',
       image: 'https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67b426bb4b3c88fd7e4117e9_image.png',
       link: '/service/intellectual-property-protection'
     }
@@ -76,9 +76,9 @@ function OurServices() {
               letterSpacing: typography.letterSpacing.tight,
             }}
           >
-            Expertly Tailored Legal Solutions for{' '}
+            Expertly Tailored Manufacturing Solutions for{' '}
             <br />
-            <span style={{ color: '#c9a668' }}>Your Every Need</span>
+            <span style={{ color: '#c9a668' }}>Your Brand Vision</span>
           </h2>
         </div>
 
