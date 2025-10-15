@@ -91,7 +91,7 @@ function Footer() {
             }}
             className="font-normal text-center tracking-wider"
           >
-            BREEZE FA
+            LET'S BREEZE
           </h2>
         </div>
 
