@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { colors, typography } from '../../lib/designTokens';
+import { supabase } from '../../lib/supabase';
 
 function ContactFormNew() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ function ContactFormNew() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -22,18 +24,64 @@ function ContactFormNew() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage('');
 
-    // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitStatus('success');
-      setFormData({ firstName: '', lastName: '', email: '', message: '' });
+      // Step 1: Save message to database
+      const { error: dbError } = await supabase
+        .from('contact_messages')
+        .insert([
+          {
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            email: formData.email,
+            message: formData.message,
+          },
+        ])
+        .select();
+
+      if (dbError) {
+        throw new Error(`Database error: ${dbError.message}`);
+      }
+
+      // Step 2: Send email notification via Edge Function
+      console.log('🚀 Calling Edge Function...');
+      const { data: emailResult, error: functionError } = await supabase.functions.invoke(
+        'send-contact-email',
+        {
+          body: {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            message: formData.message,
+          },
+        }
+      );
+
+      console.log('📧 Edge Function response:', { emailResult, functionError });
+
+      if (functionError) {
+        console.error('❌ Email sending error:', functionError);
+        // Still show success if message was saved, even if email fails
+        setSubmitStatus('success');
+        setFormData({ firstName: '', lastName: '', email: '', message: '' });
+      } else {
+        // Both database save and email sent successfully
+        console.log('✅ Email sent successfully!', emailResult);
+        setSubmitStatus('success');
+        setFormData({ firstName: '', lastName: '', email: '', message: '' });
+      }
     } catch (error) {
+      console.error('Submission error:', error);
       setSubmitStatus('error');
+      setErrorMessage(error.message || 'Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
       // Reset status after 5 seconds
-      setTimeout(() => setSubmitStatus(null), 5000);
+      setTimeout(() => {
+        setSubmitStatus(null);
+        setErrorMessage('');
+      }, 5000);
     }
   };
 
@@ -198,7 +246,7 @@ function ContactFormNew() {
                   fontFamily: typography.fontFamily.body,
                 }}
               >
-                ✗ Something went wrong. Please try again.
+                ✗ {errorMessage || 'Something went wrong. Please try again.'}
               </div>
             )}
 

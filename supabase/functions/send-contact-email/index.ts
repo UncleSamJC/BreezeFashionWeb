@@ -38,35 +38,77 @@ serve(async (req) => {
       )
     }
 
-    // Send email via Resend
-    const res = await fetch('https://api.resend.com/emails', {
+    // Email 1: Send confirmation to user
+    const userEmailRes = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev', // Change this to your verified domain
-        to: ['your-email@example.com'], // Change to your actual email
-        subject: `New Contact Form Submission from ${firstName} ${lastName}`,
+        from: 'onboarding@resend.dev',
+        to: [email],
+        subject: `Thank you for contacting us, ${firstName}!`,
         html: `
-          <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Message:</strong></p>
-          <p>${message.replace(/\n/g, '<br>')}</p>
+          <h2>Thank you for your message!</h2>
+          <p>Hi ${firstName} ${lastName},</p>
+          <p>We have received your message and will get back to you as soon as possible.</p>
+
+          <h3>Your message:</h3>
+          <div style="background: #f5f5f5; padding: 15px; border-radius: 5px;">
+            <p>${message.replace(/\n/g, '<br>')}</p>
+          </div>
+
           <hr>
-          <p><small>Sent from your website contact form</small></p>
+          <p><small>This is an automated confirmation email.</small></p>
         `,
       }),
     })
 
-    const data = await res.json()
+    const userEmailData = await userEmailRes.json()
 
-    if (!res.ok) {
-      console.error('Resend API error:', data)
+    if (!userEmailRes.ok) {
+      console.error('User email error:', userEmailData)
+    }
+
+    // Email 2: Send notification to admin
+    const adminEmailRes = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${RESEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: 'onboarding@resend.dev',
+        to: ['dezhiwang5633@gmail.com'],
+        reply_to: email,
+        subject: `📩 New Contact Message from ${firstName} ${lastName}`,
+        html: `
+          <h2>📩 New Contact Form Submission</h2>
+
+          <h3>Contact Information:</h3>
+          <ul>
+            <li><strong>Name:</strong> ${firstName} ${lastName}</li>
+            <li><strong>Email:</strong> <a href="mailto:${email}">${email}</a></li>
+          </ul>
+
+          <h3>Message:</h3>
+          <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p style="margin: 0;">${message.replace(/\n/g, '<br>')}</p>
+          </div>
+
+          <hr>
+          <p><small>💡 Click "Reply" to respond directly to ${email}</small></p>
+        `,
+      }),
+    })
+
+    const adminEmailData = await adminEmailRes.json()
+
+    if (!adminEmailRes.ok) {
+      console.error('Admin email error:', adminEmailData)
       return new Response(
-        JSON.stringify({ error: 'Failed to send email', details: data }),
+        JSON.stringify({ error: 'Failed to send admin notification', details: adminEmailData }),
         {
           status: 500,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -75,7 +117,11 @@ serve(async (req) => {
     }
 
     return new Response(
-      JSON.stringify({ success: true, id: data.id }),
+      JSON.stringify({
+        success: true,
+        userEmailId: userEmailData.id,
+        adminEmailId: adminEmailData.id
+      }),
       {
         status: 200,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }
