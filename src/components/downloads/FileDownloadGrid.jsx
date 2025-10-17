@@ -73,8 +73,14 @@ function FileDownloadGrid({ downloads }) {
         email_sent: false,
       });
 
-      // 3. TODO: Send email with PDF (will implement later)
-      // await sendEmailWithPDF(email, selectedFile);
+      // 3. Trigger browser download
+      const link = document.createElement('a');
+      link.href = selectedFile.url;
+      link.download = selectedFile.filename;
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
       setSubmitStatus('success');
 
@@ -204,7 +210,7 @@ function FileDownloadGrid({ downloads }) {
                         className="md:hidden font-semibold"
                         style={{ color: colors.text.secondary }}
                       >
-                        日期:
+                        上传日期:
                       </span>
                       <span style={{ color: colors.text.secondary, fontSize: typography.fontSize.sm }}>
                         {new Date(file.date).toLocaleDateString('zh-CN')}

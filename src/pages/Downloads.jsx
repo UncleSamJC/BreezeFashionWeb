@@ -1,68 +1,63 @@
+import { useState, useEffect } from 'react';
 import SubPageHero from '../components/basic/SubPageHero';
 import Mission from "../components/about/Mission";
 
 import FinalCTA from "../components/home/FinalCTA";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 import FileDownloadGrid from "../components/downloads/FileDownloadGrid";
+import { supabase } from '../lib/supabase';
 
 function Downloads() {
-  // 测试数据 - 之后从 Supabase 获取
-  const mockDownloads = [
-    {
-      version: 'v2.5',
-      name: 'Product Catalog 2024',
-      size: '15.2 MB',
-      type: 'PDF',
-      date: '2024-10-05',
-      url: '/files/product-catalog-2024.pdf',
-      filename: 'product-catalog-2024.pdf'
-    },
-    {
-      version: 'v2.4',
-      name: 'Brand Guidelines',
-      size: '8.7 MB',
-      type: 'PDF',
-      date: '2024-10-01',
-      url: '/files/brand-guidelines.pdf',
-      filename: 'brand-guidelines.pdf'
-    },
-    {
-      version: 'v3.1',
-      name: 'Fashion Lookbook Fall 2024',
-      size: '42.3 MB',
-      type: 'PDF',
-      date: '2024-09-15',
-      url: '/files/lookbook-fall-2024.pdf',
-      filename: 'lookbook-fall-2024.pdf'
-    },
-    {
-      version: 'v3.0',
-      name: 'Fashion Lookbook Summer 2024',
-      size: '38.9 MB',
-      type: 'PDF',
-      date: '2024-09-10',
-      url: '/files/lookbook-summer-2024.pdf',
-      filename: 'lookbook-summer-2024.pdf'
-    },
-    {
-      version: 'v1.8',
-      name: 'Company Profile',
-      size: '5.4 MB',
-      type: 'PDF',
-      date: '2024-08-20',
-      url: '/files/company-profile.pdf',
-      filename: 'company-profile.pdf'
-    },
-    {
-      version: 'v1.2',
-      name: 'Sustainability Report 2024',
-      size: '12.1 MB',
-      type: 'PDF',
-      date: '2024-08-15',
-      url: '/files/sustainability-report-2024.pdf',
-      filename: 'sustainability-report-2024.pdf'
-    },
-  ];
+  const [downloads, setDownloads] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Load downloadable PDFs from Supabase
+  useEffect(() => {
+    loadDownloads();
+  }, []);
+
+  const loadDownloads = async () => {
+    try {
+      setIsLoading(true);
+
+      const { data, error } = await supabase
+        .from('downloadable_pdfs_info')
+        .select('*')
+        .order('upload_date', { ascending: false });
+
+      if (error) {
+        console.error('Error loading downloads:', error);
+        return;
+      }
+
+      // Transform data to match FileDownloadGrid format
+      const formattedDownloads = data.map((item) => ({
+        version: item.version,
+        name: item.display_name,
+        size: formatFileSize(item.file_size),
+        type: item.file_type,
+        date: item.upload_date.split('T')[0], // YYYY-MM-DD format
+        url: supabase.storage.from('product_pdfs').getPublicUrl(item.storage_path).data.publicUrl,
+        filename: item.display_name,
+        storagePath: item.storage_path,
+      }));
+
+      setDownloads(formattedDownloads);
+    } catch (error) {
+      console.error('Error in loadDownloads:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Format file size from bytes to human-readable format
+  const formatFileSize = (bytes) => {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return (bytes / Math.pow(k, i)).toFixed(1) + ' ' + sizes[i];
+  };
 
   return (
     <>
@@ -73,7 +68,13 @@ function Downloads() {
         showButtons={true}
       />
 
-      <FileDownloadGrid downloads={mockDownloads} />
+      {isLoading ? (
+        <div className="py-20 text-center">
+          <p className="text-xl">Loading files...</p>
+        </div>
+      ) : (
+        <FileDownloadGrid downloads={downloads} />
+      )}
 
       <WhyChooseUs />
 
