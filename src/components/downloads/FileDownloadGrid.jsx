@@ -12,7 +12,7 @@ function FileDownloadGrid({ downloads }) {
   // Group downloads by year and month
   const groupedDownloads = downloads.reduce((acc, download) => {
     const date = new Date(download.date);
-    const key = `${date.getFullYear()}年${date.getMonth() + 1}月`;
+    const key = `${date.toLocaleString('en-US', { month: 'long' })}, ${date.getFullYear()}`;
 
     if (!acc[key]) {
       acc[key] = [];
@@ -134,11 +134,11 @@ function FileDownloadGrid({ downloads }) {
                     color: colors.text.primary,
                   }}
                 >
-                  <div className="col-span-1">版本</div>
-                  <div className="col-span-4">名称</div>
-                  <div className="col-span-2">大小</div>
-                  <div className="col-span-2">类型</div>
-                  <div className="col-span-2">日期</div>
+                  <div className="col-span-1">Version</div>
+                  <div className="col-span-4">File Name</div>
+                  <div className="col-span-2">Siz</div>
+                  <div className="col-span-2">Type</div>
+                  <div className="col-span-2">Upload Date</div>
                   <div className="col-span-1"></div>
                 </div>
 
@@ -236,7 +236,7 @@ function FileDownloadGrid({ downloads }) {
                           e.target.style.backgroundColor = colors.button.primary;
                         }}
                       >
-                        下载
+                        View
                       </button>
                     </div>
                   </div>
