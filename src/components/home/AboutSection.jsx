@@ -1,11 +1,12 @@
 import { colors, typography } from '../../lib/designTokens';
+import factoryImage from '../../assets/images/sz-factory.png';
 
 function AboutSection() {
   const metrics = [
-    { value: '15+', label: 'Year Experience' },
-    { value: '86k', label: 'Client Worldwide' },
-    { value: '28', label: 'Awards & Honor' },
-    { value: '98%', label: 'Happy Client' },
+    { value: '15-Years Experience', label: 'Full-Range Apparel Expert' },
+    { value: 'Scalable Quality', label: 'China-Vietnam Dual-Production' },
+    { value: 'Flexible MOQ', label: 'Fast-Turnaround Manufacturer' },
+    { value: 'Clients Worldwide', label: 'Trusted by 86k Manufacturing Partner' },
   ];
 
   return (
@@ -77,7 +78,7 @@ function AboutSection() {
           {/* Right Image */}
           <div className="flex items-center justify-center">
             <img
-              src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67aeed40002c626c25144224_image-1.png"
+              src={factoryImage}
               alt="Legal services"
               className="w-full h-auto object-contain"
               loading="lazy"

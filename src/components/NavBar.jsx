@@ -8,7 +8,7 @@ function Navbar() {
   const menuItems = [
     { to: "/", text: "Home" },
     { to: "/about", text: "About" },
-    { to: "/pricing", text: "Pricing" },
+    { to: "/products", text: "Products" },
     { to: "/downloads", text: "Downloads" },
     { to: "/blog", text: "Blog" }
   ];

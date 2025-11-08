@@ -1,6 +1,7 @@
 import { colors, typography } from '../../lib/designTokens';
 import PrimaryButton from '../basic/PrimaryButton';
 import SecondaryButton from '../basic/SecondaryButton';
+import heroVideo from '../../assets/videos/hero-bg-22e74ef19.mp4';
 
 function Hero() {
   return (
@@ -13,15 +14,10 @@ function Hero() {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover"
         style={{ zIndex: 0 }}
-        poster="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f%2F67bd727dafd0640ee5593426_freepik__push-in-on-a-group-of-figures-walking-down-a-corri__23943%20%281%29-poster-00001.jpg"
       >
         <source
-          src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f%2F67bd727dafd0640ee5593426_freepik__push-in-on-a-group-of-figures-walking-down-a-corri__23943%20%281%29-transcode.mp4"
+          src={heroVideo}
           type="video/mp4"
-        />
-        <source
-          src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f%2F67bd727dafd0640ee5593426_freepik__push-in-on-a-group-of-figures-walking-down-a-corri__23943%20%281%29-transcode.webm"
-          type="video/webm"
         />
       </video>
 
