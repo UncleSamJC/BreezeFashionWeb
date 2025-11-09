@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
 import { colors, typography } from '../../lib/designTokens';
-import factoryImage from '../../assets/images/sz-factory.png';
+import factoryImage from '../../assets/images/sz-factory-v2.png';
 
 function AboutSection() {
   const metrics = [
@@ -63,16 +64,18 @@ function AboutSection() {
               As an apparel manufacturer with a solid reputation, we are committed to providing reliable and solution-oriented OEM services. Focused on our clients' needs, we ensure that every garment is crafted to meet both quality standards and market demands.
             </p>
 
-            <button
-              className="px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:opacity-80"
-              style={{
-                backgroundColor: colors.button.primary,
-                color: colors.text.light,
-                fontFamily: typography.fontFamily.body,
-              }}
-            >
-              Learn More
-            </button>
+            <Link to="/about">
+              <button
+                className="px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:opacity-80"
+                style={{
+                  backgroundColor: colors.button.primary,
+                  color: colors.text.light,
+                  fontFamily: typography.fontFamily.body,
+                }}
+              >
+                Learn More
+              </button>
+            </Link>
           </div>
 
           {/* Right Image */}
@@ -97,7 +100,7 @@ function AboutSection() {
               }}
             >
               <div
-                className="text-5xl md:text-6xl lg:text-7xl mb-3"
+                className="text-3xl md:text-5xl lg:text-6xl mb-3"
                 style={{
                   fontFamily: typography.fontFamily.heading,
                   color: colors.text.primary,

@@ -1,43 +1,25 @@
 import { colors, typography } from '../../lib/designTokens';
+import c1 from '../../assets/images/clients/c1.png';
+import c2 from '../../assets/images/clients/c2.png';
+import c3 from '../../assets/images/clients/c3.png';
+import c4 from '../../assets/images/clients/c4.png';
+import c5 from '../../assets/images/clients/c5.png';
+import c6 from '../../assets/images/clients/c6.png';
+import c7 from '../../assets/images/clients/c7.png';
+import c8 from '../../assets/images/clients/c8.png';
+import c9 from '../../assets/images/clients/c9.png';
 
 function Testimonials() {
-  const testimonials = [
-    {
-      name: 'Alecia Höpker',
-      location: 'Kyoto Japan',
-      quote: 'From the very beginning, Breeze Fashion demonstrated a clear commitment to understanding our needs. Their manufacturing expertise and quality solutions were instrumental in driving our success and building our brand.',
-      image: '/placeholder-client-1.jpg'
-    },
-    {
-      name: 'Artur Kopp',
-      location: 'Kyoto Japan',
-      quote: 'From the very beginning, Breeze Fashion demonstrated a clear commitment to understanding our needs. Their manufacturing expertise and quality solutions were instrumental in driving our success and building our brand.',
-      image: '/placeholder-client-2.jpg'
-    },
-    {
-      name: 'Alecia Höpker',
-      location: 'Kyoto Japan',
-      quote: 'From the very beginning, Breeze Fashion demonstrated a clear commitment to understanding our needs. Their manufacturing expertise and quality solutions were instrumental in driving our success and building our brand.',
-      image: '/placeholder-client-1.jpg'
-    },
-    {
-      name: 'Artur Kopp',
-      location: 'Kyoto Japan',
-      quote: 'From the very beginning, Breeze Fashion demonstrated a clear commitment to understanding our needs. Their manufacturing expertise and quality solutions were instrumental in driving our success and building our brand.',
-      image: '/placeholder-client-2.jpg'
-    },
-    {
-      name: 'Alecia Höpker',
-      location: 'Kyoto Japan',
-      quote: 'From the very beginning, Breeze Fashion demonstrated a clear commitment to understanding our needs. Their manufacturing expertise and quality solutions were instrumental in driving our success and building our brand.',
-      image: '/placeholder-client-1.jpg'
-    },
-    {
-      name: 'Artur Kopp',
-      location: 'Kyoto Japan',
-      quote: 'From the very beginning, Breeze Fashion demonstrated a clear commitment to understanding our needs. Their manufacturing expertise and quality solutions were instrumental in driving our success and building our brand.',
-      image: '/placeholder-client-2.jpg'
-    },
+  const clients = [
+    { image: c1, name: 'Client 1' },
+    { image: c2, name: 'Client 2' },
+    { image: c3, name: 'Client 3' },
+    { image: c4, name: 'Client 4' },
+    { image: c5, name: 'Client 5' },
+    { image: c6, name: 'Client 6' },
+    { image: c7, name: 'Client 7' },
+    { image: c8, name: 'Client 8' },
+    { image: c9, name: 'Client 9' },
   ];
 
   return (
@@ -56,7 +38,7 @@ function Testimonials() {
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          {/* TESTIMONIAL 标签 */}
+          {/* 标签 */}
           <div className="inline-block mb-6">
             <div
               className="uppercase text-sm tracking-wider pb-2 border-b-2"
@@ -67,7 +49,7 @@ function Testimonials() {
                 fontWeight: typography.fontWeight.medium,
               }}
             >
-              testimonial
+              Our Partners
             </div>
           </div>
 
@@ -81,75 +63,38 @@ function Testimonials() {
             }}
           >
             <span style={{ color: colors.text.primary }}>
-              Hear Directly from Our Valued{' '}
+              Trusted by Leading Brands{' '}
             </span>
             <br />
-            <span style={{ color: colors.primary }}>Clients and Partners</span>
+            <span style={{ color: colors.primary }}>Worldwide</span>
           </h2>
         </div>
 
-        {/* Testimonials Carousel - 走马灯 */}
+        {/* Clients Carousel - 走马灯 */}
         <div className="overflow-hidden">
           <div
-            className="flex gap-4 animate-scroll"
+            className="flex gap-8 items-center animate-scroll"
             style={{
-              animation: 'scroll 40s linear infinite',
+              animation: 'scroll 30s linear infinite',
             }}
           >
             {/* 渲染两次以实现无缝循环 */}
-            {[...testimonials, ...testimonials].map((testimonial, index) => (
+            {[...clients, ...clients].map((client, index) => (
               <div
                 key={index}
-                className="p-8 rounded-2xl flex flex-col justify-between flex-shrink-0"
+                className="flex-shrink-0 flex items-center justify-center p-6 rounded-xl"
                 style={{
-                  backgroundColor: colors.background.primary,
-                  minHeight: '320px',
-                  width: '450px',
+                  width: '200px',
+                  height: '120px',
+                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
                 }}
               >
-                {/* Quote */}
-                <p
-                  className="text-lg mb-8"
-                  style={{
-                    fontFamily: typography.fontFamily.body,
-                    color: colors.text.primary,
-                    lineHeight: typography.lineHeight.normal,
-                  }}
-                >
-                  {testimonial.quote}
-                </p>
-
-                {/* Client Info - 底部对齐 */}
-                <div className="flex items-center gap-4 mt-auto">
-                  {/* Avatar */}
-                  <div
-                    className="w-14 h-14 rounded-full flex-shrink-0"
-                    style={{
-                      background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})`
-                    }}
-                  />
-
-                  <div>
-                    <div
-                      className="font-semibold text-lg"
-                      style={{
-                        fontFamily: typography.fontFamily.heading,
-                        color: colors.text.primary,
-                      }}
-                    >
-                      {testimonial.name}
-                    </div>
-                    <div
-                      className="text-sm"
-                      style={{
-                        fontFamily: typography.fontFamily.body,
-                        color: colors.text.secondary,
-                      }}
-                    >
-                      {testimonial.location}
-                    </div>
-                  </div>
-                </div>
+                <img
+                  src={client.image}
+                  alt={client.name}
+                  className="max-w-full max-h-full object-contain"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>

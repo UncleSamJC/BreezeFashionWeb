@@ -1,37 +1,21 @@
-import { useState, useEffect } from 'react';
 import SubPageHero from '../components/basic/SubPageHero';
-import Mission from "../components/about/Mission";
-
-import FinalCTA from "../components/home/FinalCTA";
-import WhyChooseUs from "../components/home/WhyChooseUs";
-import FileDownloadGrid from "../components/downloads/FileDownloadGrid";
-import { supabase } from '../lib/supabase';
+import ProductCategories from '../components/products/ProductCategories';
+import FinalCTA from '../components/home/FinalCTA';
+import productHeaderImg from "../assets/images/headerimg/tyler-davis-e0fnsLoNhH0-unsplash.jpg"
 
 function Products() {
-  const [downloads, setDownloads] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Load downloadable PDFs from Supabase
-  useEffect(() => {
-    loadDownloads();
-  }, []);
-
-
-
-
   return (
     <>
       <SubPageHero
-        backgroundImage="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2e65c45b0d8c4610607e7_image.png"
-        title="Download all all the files you need"
-        description="Get the files of our company you need to boost your business"
+        backgroundImage={productHeaderImg}
+        title="Discover Our Fashion Collections"
+        description="Explore our diverse range of premium apparel from elegant kimonos to stylish scarves. Quality craftsmanship meets contemporary design."
         showButtons={true}
       />
 
+      <ProductCategories />
 
-
-      <WhyChooseUs />
-
+      <FinalCTA />
     </>
   );
 }

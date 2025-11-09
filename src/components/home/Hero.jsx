@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { colors, typography } from '../../lib/designTokens';
 import PrimaryButton from '../basic/PrimaryButton';
 import SecondaryButton from '../basic/SecondaryButton';
@@ -25,7 +26,7 @@ function Hero() {
       <div
         className="absolute top-0 left-0 w-full h-full"
         style={{
-          background: 'linear-gradient(180deg, rgba(0,29,61,0.4) 0%, rgba(0,29,61,0.8) 100%)',
+          background: 'linear-gradient(180deg, rgba(0,29,61,0.4) 0%, rgba(0,29,61,0.9) 100%)',
           zIndex: 1,
         }}
       />
@@ -56,8 +57,12 @@ function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <PrimaryButton>Request Quote</PrimaryButton>
-          <SecondaryButton>Our Services</SecondaryButton>
+          <Link to="/contact">
+            <PrimaryButton>Request Quote</PrimaryButton>
+          </Link>
+          <a href="/#our-services">
+            <SecondaryButton>Our Services</SecondaryButton>
+          </a>
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { colors, typography } from '../../lib/designTokens';
 import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
@@ -56,8 +57,12 @@ function SubPageHero({
         {/* Buttons */}
         {showButtons && (
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <PrimaryButton>Book Consultant</PrimaryButton>
-            <SecondaryButton>Our Services</SecondaryButton>
+            <Link to="/contact">
+              <PrimaryButton>Book Consultant</PrimaryButton>
+            </Link>
+            <Link to="/#our-services">
+              <SecondaryButton>Our Services</SecondaryButton>
+            </Link>
           </div>
         )}
       </div>

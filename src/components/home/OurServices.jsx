@@ -1,38 +1,41 @@
-import { useState } from 'react';
-import { colors, typography } from '../../lib/designTokens';
+import { useState } from "react";
+import { colors, typography } from "../../lib/designTokens";
+import s1Image from "../../assets/images/service/s1-sketch.png";
+import s2Image from "../../assets/images/service/s2-sketch.png";
+import s3Image from "../../assets/images/service/bs3.jpg";
+import s4Image from "../../assets/images/service/bs4.jpg";
 
 function OurServices() {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const services = [
     {
-
-      title: 'Custom Apparel Manufacturing',
-      description: 'Offering expert garment production from concept to completion, helping brands create high-quality clothing lines that meet market demands, maintain consistency, and achieve sustainable growth for lasting success.',
-      image: 'https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67ca7547e76f54417170af76_image%2015.png',
-      link: '/service/business-legal-consultation'
+      title: "Custom Apparel Manufacturing",
+      description:
+        "Offering expert garment production from concept to completion, helping brands create high-quality clothing lines that meet market demands, maintain consistency, and achieve sustainable growth for lasting success.",
+      image: s1Image
     },
     {
-
-      title: 'Quality Control & Inspection',
-      description: 'Comprehensive quality assurance throughout the production process, ensuring every garment meets your specifications and industry standards, protecting your brand reputation and customer satisfaction.',
-      image: 'https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67b550c07974e3eba43da26b_image%20(7).png',
-      link: '/service/dispute-resolution'
+      title: "Quality Control & Inspection",
+      description:
+        "Comprehensive quality assurance throughout the production process, ensuring every garment meets your specifications and industry standards, protecting your brand reputation and customer satisfaction.",
+      image:
+        s2Image
     },
     {
-
-      title: 'Pattern Making & Sampling',
-      description: 'Professional pattern development and sample creation services, transforming your designs into production-ready templates with precision measurements, fit optimization, and material selection guidance.',
-      image: 'https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67be8baf13bb4679af4a2de6_Rectangle%2045.png',
-      link: '/service/licensing-and-contracts'
+      title: "Pattern Making & Sampling",
+      description:
+        "Professional pattern development and sample creation services, transforming your designs into production-ready templates with precision measurements, fit optimization, and material selection guidance.",
+      image:
+        s3Image
     },
     {
-
-      title: 'Fabric Sourcing & Development',
-      description: 'Strategic fabric sourcing and custom textile development services, connecting you with quality suppliers, managing material procurement, and ensuring cost-effective solutions for your production needs.',
-      image: 'https://cdn.prod.website-files.com/67b4265e6628451a28bef3a9/67b426bb4b3c88fd7e4117e9_image.png',
-      link: '/service/intellectual-property-protection'
-    }
+      title: "Fabric Sourcing & Development",
+      description:
+        "Strategic fabric sourcing and custom textile development services, connecting you with quality suppliers, managing material procurement, and ensuring cost-effective solutions for your production needs.",
+      image:
+        s4Image
+    },
   ];
 
   const toggleService = (index) => {
@@ -40,7 +43,11 @@ function OurServices() {
   };
 
   return (
-    <section className="relative py-20 px-6 md:px-12 lg:px-24 overflow-hidden" style={{ backgroundColor: colors.background.isabelline }}>
+    <section
+      id="our-services"
+      className="relative py-20 px-6 md:px-12 lg:px-24 overflow-hidden"
+      style={{ backgroundColor: colors.background.isabelline }}
+    >
       {/* Background grain texture */}
       <img
         src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b29f23c5b3038c9ea552cd_grain.png"
@@ -76,9 +83,8 @@ function OurServices() {
               letterSpacing: typography.letterSpacing.tight,
             }}
           >
-            Expertly Tailored Manufacturing Solutions for{' '}
-            <br />
-            <span style={{ color: '#c9a668' }}>Your Brand Vision</span>
+            Expertly Tailored Manufacturing Solutions for <br />
+            <span style={{ color: "#c9a668" }}>Your Brand Vision</span>
           </h2>
         </div>
 
@@ -88,7 +94,7 @@ function OurServices() {
             <div
               key={index}
               className="border-b overflow-hidden transition-all duration-500"
-              style={{ borderColor: 'rgba(0, 0, 0, 0.15)' }}
+              style={{ borderColor: "rgba(0, 0, 0, 0.15)" }}
             >
               {/* Service Header - Always Visible */}
               <div
@@ -96,7 +102,6 @@ function OurServices() {
                 className="flex items-center justify-between py-8 cursor-pointer group"
               >
                 <div className="flex items-start gap-8 flex-1">
-
                   {/* Title and Expanded Content */}
                   <div className="flex-1">
                     <h3
@@ -113,7 +118,7 @@ function OurServices() {
                     <div
                       className="transition-all duration-500 overflow-hidden"
                       style={{
-                        maxHeight: expandedIndex === index ? '800px' : '0px',
+                        maxHeight: expandedIndex === index ? "800px" : "0px",
                         opacity: expandedIndex === index ? 1 : 0,
                       }}
                     >
@@ -122,27 +127,11 @@ function OurServices() {
                         style={{
                           fontFamily: typography.fontFamily.body,
                           color: colors.text.secondary,
-                          lineHeight: '1.7',
+                          lineHeight: "1.7",
                         }}
                       >
                         {service.description}
                       </p>
-
-                      <button
-                        className="px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:opacity-80"
-                        style={{
-                          backgroundColor: colors.button.primary,
-                          color: colors.text.light,
-                          fontFamily: typography.fontFamily.body,
-                        }}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          // Handle navigation
-                          window.location.href = service.link;
-                        }}
-                      >
-                        Learn More
-                      </button>
 
                       {/* Image Section */}
                       <div className="mt-8 pr-12">
@@ -151,7 +140,7 @@ function OurServices() {
                           alt={service.title}
                           className="w-full h-auto rounded-2xl object-cover"
                           style={{
-                            maxHeight: '500px',
+                            maxHeight: "500px",
                           }}
                           loading="lazy"
                         />
@@ -167,7 +156,10 @@ function OurServices() {
                     alt=""
                     className="w-8 h-8 transition-transform duration-300"
                     style={{
-                      transform: expandedIndex === index ? 'rotate(90deg)' : 'rotate(0deg)',
+                      transform:
+                        expandedIndex === index
+                          ? "rotate(90deg)"
+                          : "rotate(0deg)",
                     }}
                   />
                 </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { colors, typography } from "../lib/designTokens";
+import webLogo from "../assets/images/web-logo-v2.png";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +25,7 @@ function Navbar() {
           {/* Logo 组 */}
           <Link to="/" className="flex items-center gap-3 flex-shrink-0">
             <img
-              src="https://cdn.prod.website-files.com/677df2203175761c2bf874cb/67aedea7a758264cf622b051_Group-1.svg"
+              src={webLogo}
               alt="Breeze Fashion Logo"
               className="h-10 w-10"
             />

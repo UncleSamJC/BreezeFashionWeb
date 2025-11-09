@@ -5,6 +5,7 @@ import Mission from "../components/about/Mission";
 import FinalCTA from "../components/home/FinalCTA";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 import FileDownloadGrid from "../components/downloads/FileDownloadGrid";
+import downloadHeaderImg from "../assets/images/headerimg/jesse-orrico-5xWf-gE_45U-unsplash.jpg"
 import { supabase } from '../lib/supabase';
 
 function Downloads() {
@@ -62,7 +63,7 @@ function Downloads() {
   return (
     <>
       <SubPageHero
-        backgroundImage="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2e65c45b0d8c4610607e7_image.png"
+        backgroundImage={downloadHeaderImg}
         title="Download all all the files you need"
         description="Get the files of our company you need to boost your business"
         showButtons={true}

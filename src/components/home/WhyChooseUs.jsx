@@ -4,34 +4,34 @@ function WhyChooseUs() {
   const attributes = [
     {
       icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1adf84997b44f076803_08dbb3cd-14d4-4ae5-8212-44c0247b164f.png',
-      title: 'Proven Expertise',
-      description: 'Our team of seasoned manufacturing experts brings extensive knowledge and experience to navigate complex production challenges effectively.'
+      title: '15+ Years of Expertise',
+      description: 'Since 2009, we’ve evolved from a designer kimono specialist to a full-range fashion manufacturer, delivering seasonal styles that keep your collections ahead of trends.'
     },
     {
       icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ada682f9bde562529f_08dbb3cd-14d4-4ae5-8212-44c0247b164f-1.png',
-      title: 'Proven Track Record',
-      description: 'With years of success in handling complex apparel production, we have earned a reputation for delivering high-quality products and timely delivery.'
+      title: 'End-to-End Quality Assurance',
+      description: 'We control every step—from premium yarn selection to weaving, dyeing, and finishing. Our in-house printing expertise and SA8000-certified quality checks ensure vibrant, durable products.'
     },
     {
       icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ada8e69583e96e0887_08dbb3cd-14d4-4ae5-8212-44c0247b164f-2.png',
-      title: 'Tailored Approach',
-      description: 'Custom Manufacturing Solutions Designed to Meet Your Unique Brand Requirements and Drive Market Success'
+      title: 'Dual-Factory Global Production',
+      description: 'Our China (Suzhou) and Vietnam (Ho Chi Minh City) facilities produce ​10,000+ units/day (4,810/day in China + 3,500/day in Vietnam), offering flexible scalability for both small-batch fast fashion and large-volume orders.'
     },
     {
       icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ad0d3994b9838a79dd_08dbb3cd-14d4-4ae5-8212-44c0247b164f-3.png',
-      title: 'Integrity',
-      description: 'We prioritize transparency and honesty, ensuring clear communication and trust in every aspect of our services.'
+      title: 'Trusted by 86,000+ Global Buyers',
+      description: 'Serving ​86,000+ international clients (brands/retailers), our products are stocked in major department stores and boutiques worldwide—proven by repeat orders and long-term partnerships.'
     },
     {
       icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ad0d3994b9838a79d9_08dbb3cd-14d4-4ae5-8212-44c0247b164f-4.png',
-      title: 'Dedication to Excellence',
-      description: 'Our primary focus is on delivering impactful and sustainable outcomes that drive success for our clients.'
+      title: 'Complete Fashion Category Coverage',
+      description: 'One-stop sourcing for scarves, beachwear, cover-ups, dresses, knits/wovens accessories, outwears plus pet tees and face masks—curated to meet diverse buyer needs.'
     },
     {
       icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1adca60daab55e6cbb7_08dbb3cd-14d4-4ae5-8212-44c0247b164f-5.png',
-      title: 'Real Results',
-      description: 'Our primary focus is on delivering impactful and sustainable outcomes that drive success for our clients.'
-    },
+      title: 'Flexible MOQ & Lightning-Fast Delivery',
+      description: 'We understand the diverse needs of global buyers. That’s why we offer ​flexible minimum order quantities (MOQs)—from small-batch samples to large-volume production—and deliver with ​industry-leading speed. Whether you need a quick-turn prototype or a fast-fashion collection, our streamlined processes ensure your orders arrive on time, every time.'
+    }
   ];
 
   return (

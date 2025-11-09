@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import { colors, typography } from '../../lib/designTokens';
 import PrimaryButton from '../basic/PrimaryButton';
 import SecondaryButton from '../basic/SecondaryButton';
+import ctaBg from '../../assets/images/gta-bg.png';
 
 function FinalCTA() {
   return (
@@ -13,7 +15,7 @@ function FinalCTA() {
     >
       {/* 背景图片 */}
       <img
-        src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2c05a796a335d9cc60ea7_Rectangle%2041.png"
+        src={ctaBg}
         alt=""
         className="absolute top-0 left-0 w-full h-full object-cover"
         style={{ zIndex: 0 }}
@@ -23,7 +25,7 @@ function FinalCTA() {
       <div
         className="absolute top-0 left-0 w-full h-full"
         style={{
-          background: 'linear-gradient(180deg, rgba(0,29,61,0.2) 0%, rgba(0,29,61,0.6) 100%)',
+          background: 'linear-gradient(180deg, rgba(0,29,61,0.5) 0%, rgba(0,29,61,0.9) 100%)',
           zIndex: 1,
         }}
       />
@@ -61,8 +63,12 @@ function FinalCTA() {
 
         {/* 按钮组 */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <PrimaryButton>Request Quote</PrimaryButton>
-          <SecondaryButton>Our Services</SecondaryButton>
+          <Link to="/contact">
+            <PrimaryButton>Request Quote</PrimaryButton>
+          </Link>
+          <a href="/#our-services">
+            <SecondaryButton>Our Services</SecondaryButton>
+          </a>
         </div>
       </div>
     </section>
