@@ -41,7 +41,7 @@ function TeamPreview() {
             <div
               className="uppercase text-sm tracking-wider pb-2 border-b-2"
               style={{
-                color: colors.text.light,
+                color: colors.text.primary,
                 borderColor: colors.text.light,
                 fontFamily: typography.fontFamily.body,
                 fontWeight: typography.fontWeight.medium,
@@ -60,7 +60,7 @@ function TeamPreview() {
               letterSpacing: typography.letterSpacing.tight,
             }}
           >
-            <span style={{ color: colors.text.light }}>
+            <span style={{ color: colors.text.primary }}>
               Introducing Our Experienced<br />
               Team of{' '}
             </span>

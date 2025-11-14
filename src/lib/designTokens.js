@@ -5,8 +5,8 @@
 
 export const colors = {
   // 主色调
-  primary: '#A97B54',           // 主色 - 金棕色
-  secondary: '#001D3D',         // 次要色 - 深蓝色
+  primary: '#CBB092',         // 主色 - 金棕色 '#A97B54',  
+  secondary: '#FAFAFA',         // 深蓝色 '#001D3D', 
 
   // 背景色
   background: {

@@ -26,7 +26,7 @@ function Hero() {
       <div
         className="absolute top-0 left-0 w-full h-full"
         style={{
-          background: 'linear-gradient(180deg, rgba(0,29,61,0.4) 0%, rgba(0,29,61,0.9) 100%)',
+          background: 'linear-gradient(180deg, rgba(254,238,145,0.1) 0%, rgba(256,162,57,0.2) 100%)',
           zIndex: 1,
         }}
       />

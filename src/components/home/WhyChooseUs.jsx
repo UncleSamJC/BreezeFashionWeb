@@ -35,7 +35,7 @@ function WhyChooseUs() {
   ];
 
   return (
-    <section className="relative overflow-hidden py-20 px-6 md:px-12 lg:px-24" style={{ backgroundColor: '#1a3d5c' }}>
+    <section className="relative overflow-hidden py-20 px-6 md:px-12 lg:px-24" style={{ backgroundColor: '#F7F4EE' }}>
       {/* Background grain texture - 最底层 */}
       <img
         src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b29f23c5b3038c9ea552cd_grain.png"

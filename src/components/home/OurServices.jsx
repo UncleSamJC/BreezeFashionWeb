@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { colors, typography } from "../../lib/designTokens";
-import s1Image from "../../assets/images/service/s1-sketch.png";
-import s2Image from "../../assets/images/service/s2-sketch.png";
-import s3Image from "../../assets/images/service/bs3.jpg";
-import s4Image from "../../assets/images/service/bs4.jpg";
+import s1Image from "../../assets/images/service/bs1.png";
+import s2Image from "../../assets/images/service/bs2.png";
+import s3Image from "../../assets/images/service/bs3.png";
+import s4Image from "../../assets/images/service/bs4.png";
 
 function OurServices() {
   const [expandedIndex, setExpandedIndex] = useState(null);

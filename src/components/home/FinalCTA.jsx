@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { colors, typography } from '../../lib/designTokens';
 import PrimaryButton from '../basic/PrimaryButton';
 import SecondaryButton from '../basic/SecondaryButton';
-import ctaBg from '../../assets/images/gta-bg.png';
+
 
 function FinalCTA() {
   return (
@@ -13,13 +13,6 @@ function FinalCTA() {
         height: '599px',
       }}
     >
-      {/* 背景图片 */}
-      <img
-        src={ctaBg}
-        alt=""
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        style={{ zIndex: 0 }}
-      />
 
       {/* 渐变遮罩 */}
       <div

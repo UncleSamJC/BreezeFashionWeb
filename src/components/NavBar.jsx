@@ -16,8 +16,8 @@ function Navbar() {
 
   return (
     <nav
-      style={{ backgroundColor: colors.secondary }}
-      className="fixed top-0 left-0 right-0 z-50 shadow-md"
+      style={{ backgroundColor: 'rgba(250, 250, 250, 0.7)' }}
+      className="fixed top-0 left-0 right-0 z-50 shadow-md backdrop-blur-sm"
     >
       {/* 主容器 */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -34,9 +34,8 @@ function Navbar() {
                 fontFamily: typography.fontFamily.heading,
                 fontSize: '32px',
                 fontWeight: typography.fontWeight.normal,
-                color: colors.text.light,
+                color: colors.text.primary,
               }}
-              className="hidden sm:block"
             >
               Breeze Fashion
             </span>
@@ -48,10 +47,14 @@ function Navbar() {
               <Link
                 key={item.text}
                 to={item.to}
-                style={{ color: colors.text.light }}
-                className="text-base font-medium hover:opacity-80 transition-opacity whitespace-nowrap"
+                style={{ color: colors.text.secondary }}
+                className="text-base font-medium whitespace-nowrap relative group transition-colors hover:!text-[#CBB092]"
               >
                 {item.text}
+                <span
+                  className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                  style={{ backgroundColor: colors.text.primary }}
+                ></span>
               </Link>
             ))}
           </div>
@@ -62,8 +65,8 @@ function Navbar() {
             <Link
               to="/contact"
               style={{
-                backgroundColor: colors.primary,
-                color: colors.text.light,
+                backgroundColor: colors.background.darkVanilla,
+                color: colors.text.primary,
               }}
               className="hidden lg:block rounded-full px-8 py-3 text-base font-medium hover:opacity-90 transition-opacity whitespace-nowrap"
             >
@@ -79,7 +82,7 @@ function Navbar() {
             >
               <svg
                 className="w-6 h-6"
-                style={{ color: colors.text.light }}
+                style={{ color: colors.text.primary }}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -107,9 +110,9 @@ function Navbar() {
 
       {/* 移动端展开菜单 */}
       <div
-        style={{ backgroundColor: colors.secondary }}
+        style={{ backgroundColor: 'rgba(250, 250, 250, 0.95)' }}
         className={`lg:hidden transition-all duration-300 ease-out overflow-hidden ${
-          isMenuOpen ? 'max-h-96 border-t border-white/10' : 'max-h-0'
+          isMenuOpen ? 'max-h-96 border-t border-gray-200' : 'max-h-0'
         }`}
       >
         <div className="px-6 py-4 space-y-2">
@@ -117,7 +120,7 @@ function Navbar() {
             <Link
               key={item.text}
               to={item.to}
-              style={{ color: colors.text.light }}
+              style={{ color: colors.text.primary }}
               className="block py-3 text-base font-medium hover:opacity-80 transition-opacity"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -128,8 +131,8 @@ function Navbar() {
           <Link
             to="/contact"
             style={{
-              backgroundColor: colors.primary,
-              color: colors.text.light,
+              backgroundColor: colors.background.primary,
+              color: colors.text.primary,
             }}
             className="block text-center rounded-full px-8 py-3 text-base font-medium hover:opacity-90 transition-opacity mt-4"
             onClick={() => setIsMenuOpen(false)}

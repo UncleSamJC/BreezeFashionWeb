@@ -12,14 +12,14 @@ function Footer() {
       <div className="max-w-7xl mx-auto">
 
         {/* 中间区域：大标题 BREEZE FA */}
-        <div className="mb-10 pb-16 pt-16 border-b border-white/10">
+        <div className="mb-10 pb-16 pt-16 border-b border-gray-200">
           <h2
             style={{
               fontFamily: typography.fontFamily.heading,
-              color: colors.text.light,
+              color: colors.text.secondary,
               fontSize: 'clamp(4rem, 15vw, 12rem)',
               lineHeight: '1',
-            
+
             }}
             className="font-normal text-center tracking-wider"
           >
@@ -33,7 +33,7 @@ function Footer() {
           <p
             style={{
               fontFamily: typography.fontFamily.body,
-              color: colors.text.light,
+              color: colors.text.secondary,
             }}
             className="text-base"
           >
