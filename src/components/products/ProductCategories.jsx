@@ -8,8 +8,14 @@ function ProductCategories() {
       title: "Fashion Kimono",
       description:
         "Elegant and versatile kimono designs combining traditional aesthetics with modern fashion. Perfect for casual wear, beach outings, and layering.",
-      productCount: 12,
+      productCount: 4,
       backgroundColor: colors.background.whiteChocolate,
+      images: [
+        "/src/assets/images/products/1fashionk/1U107039.jpg",
+        "/src/assets/images/products/1fashionk/1U107068.jpg",
+        "/src/assets/images/products/1fashionk/1U107073.jpg",
+        "/src/assets/images/products/1fashionk/1U107103.jpg",
+      ],
     },
     {
       id: "swimwear",
@@ -113,7 +119,7 @@ function ProductCategories() {
               </div>
             </div>
 
-            {/* Product Grid - Placeholder */}
+            {/* Product Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {Array.from({ length: category.productCount }).map((_, idx) => (
                 <div
@@ -123,26 +129,34 @@ function ProductCategories() {
                     backgroundColor: "rgba(0, 0, 0, 0.05)",
                   }}
                 >
-                  <div className="w-full h-full flex items-center justify-center transition-all duration-300 group-hover:scale-105">
-                    <div className="text-center">
-                      <div
-                        className="text-6xl mb-2"
-                        style={{ color: colors.primary, opacity: 0.3 }}
-                      >
-                        📷
+                  {category.images && category.images[idx] ? (
+                    <img
+                      src={category.images[idx]}
+                      alt={`${category.title} ${idx + 1}`}
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+                      <div className="text-center">
+                        <div
+                          className="text-6xl mb-2"
+                          style={{ color: colors.primary, opacity: 0.3 }}
+                        >
+                          📷
+                        </div>
+                        <p
+                          className="text-sm"
+                          style={{
+                            fontFamily: typography.fontFamily.body,
+                            color: colors.text.secondary,
+                            opacity: 0.5,
+                          }}
+                        >
+                          Product {idx + 1}
+                        </p>
                       </div>
-                      <p
-                        className="text-sm"
-                        style={{
-                          fontFamily: typography.fontFamily.body,
-                          color: colors.text.secondary,
-                          opacity: 0.5,
-                        }}
-                      >
-                        Product {idx + 1}
-                      </p>
                     </div>
-                  </div>
+                  )}
                 </div>
               ))}
             </div>
