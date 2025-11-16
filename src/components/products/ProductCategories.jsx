@@ -22,8 +22,18 @@ function ProductCategories() {
       title: "Swim Suits & Cover-Up Dress",
       description:
         "Stylish swimwear and beach cover-ups designed for comfort and elegance. From casual beach dresses to sophisticated cover-ups.",
-      productCount: 10,
+      productCount: 8,
       backgroundColor: colors.background.isabelline,
+      images: [
+        "/src/assets/images/products/2swimscud/swim001.jpg",
+        "/src/assets/images/products/2swimscud/swim002.jpg",
+        "/src/assets/images/products/2swimscud/swim003.jpg",
+        "/src/assets/images/products/2swimscud/swim004.jpg",
+        "/src/assets/images/products/2swimscud/swim005.jpg",
+        "/src/assets/images/products/2swimscud/swim006.jpg",
+        "/src/assets/images/products/2swimscud/swim007.jpg",
+        "/src/assets/images/products/2swimscud/swim008.jpg",
+      ],
     },
     {
       id: "lace",
