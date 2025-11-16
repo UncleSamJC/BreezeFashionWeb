@@ -5,7 +5,7 @@ import Mission from "../components/about/Mission";
 import FinalCTA from "../components/home/FinalCTA";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 import FileDownloadGrid from "../components/downloads/FileDownloadGrid";
-import downloadHeaderImg from "../assets/images/headerimg/jesse-orrico-5xWf-gE_45U-unsplash.jpg"
+import downloadHeaderImg from "../assets/images/headerimg/20251110183847_131_856.jpg"
 import { supabase } from '../lib/supabase';
 
 function Downloads() {

@@ -5,7 +5,7 @@ import ContactMethodsGrid from "../components/contact/ContactMethodsGrid";
 import TeamPreview from "../components/home/TeamPreview";
 import FAQ from "../components/home/FAQ";
 import FinalCTA from "../components/home/FinalCTA";
-import contactHeaderBg from "../assets/images/headerimg/jordan-ladikos-AzXvM3IoYMI-unsplash.jpg"
+import contactHeaderBg from "../assets/images/headerimg/20251110183807_128_856.jpg"
 
 function Contact() {
   return (

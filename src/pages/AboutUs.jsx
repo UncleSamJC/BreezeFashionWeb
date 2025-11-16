@@ -3,7 +3,7 @@ import Mission from "../components/about/Mission";
 
 import FinalCTA from "../components/home/FinalCTA";
 import WhyChooseUs from "../components/home/WhyChooseUs";
-import bgAbout from "../assets/images/headerimg/bobby-HMcHUN0764o-unsplash.jpg"
+import bgAbout from "../assets/images/headerimg/20251110183807_128_856.jpg"
 
 function AboutUs() {
   return (

@@ -1,7 +1,7 @@
 import SubPageHero from '../components/basic/SubPageHero';
 import ProductCategories from '../components/products/ProductCategories';
 import FinalCTA from '../components/home/FinalCTA';
-import productHeaderImg from "../assets/images/headerimg/tyler-davis-e0fnsLoNhH0-unsplash.jpg"
+import productHeaderImg from "../assets/images/headerimg/20251110183833_130_856.jpg"
 
 function Products() {
   return (

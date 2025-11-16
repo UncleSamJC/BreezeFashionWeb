@@ -1,6 +1,6 @@
 import SubPageHero from '../components/basic/SubPageHero';
 import BlogGrid from '../components/blog/BlogGrid';
-import blogHeaderImg from "../assets/images/headerimg/casey-lee-BQtnVwtu1yM-unsplash.jpg"
+import blogHeaderImg from "../assets/images/headerimg/20251110183851_132_856.jpg"
 
 function Blog() {
   return (
