@@ -1,6 +1,22 @@
 import { colors, typography } from "../../lib/designTokens";
 import { Link } from "react-router-dom";
 
+// Fashion Kimono images
+import kimono1 from "../../assets/images/products/1fashionk/1U107039.jpg";
+import kimono2 from "../../assets/images/products/1fashionk/1U107068.jpg";
+import kimono3 from "../../assets/images/products/1fashionk/1U107073.jpg";
+import kimono4 from "../../assets/images/products/1fashionk/1U107103.jpg";
+
+// Swimwear images
+import swim1 from "../../assets/images/products/2swimscud/swim001.jpg";
+import swim2 from "../../assets/images/products/2swimscud/swim002.jpg";
+import swim3 from "../../assets/images/products/2swimscud/swim003.jpg";
+import swim4 from "../../assets/images/products/2swimscud/swim004.jpg";
+import swim5 from "../../assets/images/products/2swimscud/swim005.jpg";
+import swim6 from "../../assets/images/products/2swimscud/swim006.jpg";
+import swim7 from "../../assets/images/products/2swimscud/swim007.jpg";
+import swim8 from "../../assets/images/products/2swimscud/swim008.jpg";
+
 function ProductCategories() {
   const categories = [
     {
@@ -10,12 +26,7 @@ function ProductCategories() {
         "Elegant and versatile kimono designs combining traditional aesthetics with modern fashion. Perfect for casual wear, beach outings, and layering.",
       productCount: 4,
       backgroundColor: colors.background.whiteChocolate,
-      images: [
-        "/src/assets/images/products/1fashionk/1U107039.jpg",
-        "/src/assets/images/products/1fashionk/1U107068.jpg",
-        "/src/assets/images/products/1fashionk/1U107073.jpg",
-        "/src/assets/images/products/1fashionk/1U107103.jpg",
-      ],
+      images: [kimono1, kimono2, kimono3, kimono4],
     },
     {
       id: "swimwear",
@@ -24,16 +35,7 @@ function ProductCategories() {
         "Stylish swimwear and beach cover-ups designed for comfort and elegance. From casual beach dresses to sophisticated cover-ups.",
       productCount: 8,
       backgroundColor: colors.background.isabelline,
-      images: [
-        "/src/assets/images/products/2swimscud/swim001.jpg",
-        "/src/assets/images/products/2swimscud/swim002.jpg",
-        "/src/assets/images/products/2swimscud/swim003.jpg",
-        "/src/assets/images/products/2swimscud/swim004.jpg",
-        "/src/assets/images/products/2swimscud/swim005.jpg",
-        "/src/assets/images/products/2swimscud/swim006.jpg",
-        "/src/assets/images/products/2swimscud/swim007.jpg",
-        "/src/assets/images/products/2swimscud/swim008.jpg",
-      ],
+      images: [swim1, swim2, swim3, swim4, swim5, swim6, swim7, swim8],
     },
     {
       id: "lace",
