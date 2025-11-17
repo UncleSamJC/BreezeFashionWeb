@@ -17,6 +17,26 @@ import swim6 from "../../assets/images/products/2swimscud/swim006.jpg";
 import swim7 from "../../assets/images/products/2swimscud/swim007.jpg";
 import swim8 from "../../assets/images/products/2swimscud/swim008.jpg";
 
+// Burnout Velvet images
+import velvet1 from "../../assets/images/products/4fashionbv/vv001.jpg";
+import velvet2 from "../../assets/images/products/4fashionbv/vv002.jpg";
+import velvet3 from "../../assets/images/products/4fashionbv/vv003.jpg";
+import velvet4 from "../../assets/images/products/4fashionbv/vv004.jpg";
+import velvet5 from "../../assets/images/products/4fashionbv/vv005.jpg";
+import velvet6 from "../../assets/images/products/4fashionbv/vv006.jpg";
+import velvet7 from "../../assets/images/products/4fashionbv/vv007.jpg";
+import velvet8 from "../../assets/images/products/4fashionbv/vv008.jpg";
+
+// Fashion Scarf images
+import scarf1 from "../../assets/images/products/6fashions/scarf1.png";
+import scarf2 from "../../assets/images/products/6fashions/scarf2.png";
+import scarf3 from "../../assets/images/products/6fashions/scarf3.png";
+import scarf4 from "../../assets/images/products/6fashions/scarf4.jpg";
+import scarf5 from "../../assets/images/products/6fashions/scarf5.jpg";
+import scarf6 from "../../assets/images/products/6fashions/scarf6.jpg";
+import scarf7 from "../../assets/images/products/6fashions/scarf7.png";
+import scarf8 from "../../assets/images/products/6fashions/scarf8.png";
+
 function ProductCategories() {
   const categories = [
     {
@@ -50,8 +70,9 @@ function ProductCategories() {
       title: "Fashion Burnout Velvet",
       description:
         "Luxurious burnout velvet kimonos featuring intricate patterns and rich textures. Ideal for evening wear and special occasions.",
-      productCount: 9,
+      productCount: 8,
       backgroundColor: colors.background.isabelline,
+      images: [velvet1, velvet2, velvet3, velvet4, velvet5, velvet6, velvet7, velvet8],
     },
     {
       id: "holiday",
@@ -66,8 +87,9 @@ function ProductCategories() {
       title: "Fashion Scarf",
       description:
         "Premium scarves in various materials, patterns, and styles. From silk squares to wool wraps, perfect for any season.",
-      productCount: 12,
+      productCount: 8,
       backgroundColor: colors.background.isabelline,
+      images: [scarf1, scarf2, scarf3, scarf4, scarf5, scarf6, scarf7, scarf8],
     },
   ];
 
@@ -145,7 +167,7 @@ function ProductCategories() {
                     <img
                       src={category.images[idx]}
                       alt={`${category.title} ${idx + 1}`}
-                      className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                      className={`w-full h-full object-cover transition-all duration-300 group-hover:scale-105 ${category.id === 'velvet' ? 'object-top' : ''}`}
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center transition-all duration-300 group-hover:scale-105">
