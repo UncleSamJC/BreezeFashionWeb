@@ -17,6 +17,12 @@ import swim6 from "../../assets/images/products/2swimscud/swim006.jpg";
 import swim7 from "../../assets/images/products/2swimscud/swim007.jpg";
 import swim8 from "../../assets/images/products/2swimscud/swim008.jpg";
 
+// Fashion Lace & Crochet images
+import lace1 from "../../assets/images/products/3fashionlc/f3-001.jpg";
+import lace2 from "../../assets/images/products/3fashionlc/f3-002.jpg";
+import lace3 from "../../assets/images/products/3fashionlc/f3-003.jpg";
+import lace4 from "../../assets/images/products/3fashionlc/f3-004.jpg";
+
 // Burnout Velvet images
 import velvet1 from "../../assets/images/products/4fashionbv/vv001.jpg";
 import velvet2 from "../../assets/images/products/4fashionbv/vv002.jpg";
@@ -27,15 +33,21 @@ import velvet6 from "../../assets/images/products/4fashionbv/vv006.jpg";
 import velvet7 from "../../assets/images/products/4fashionbv/vv007.jpg";
 import velvet8 from "../../assets/images/products/4fashionbv/vv008.jpg";
 
+// Fashion Holiday images
+import holiday1 from "../../assets/images/products/5fashionh/f5-001.jpg";
+import holiday2 from "../../assets/images/products/5fashionh/f5-002.jpg";
+import holiday3 from "../../assets/images/products/5fashionh/f5-003.jpg";
+import holiday4 from "../../assets/images/products/5fashionh/f5-004.jpg";
+
 // Fashion Scarf images
-import scarf1 from "../../assets/images/products/6fashions/scarf1.png";
-import scarf2 from "../../assets/images/products/6fashions/scarf2.png";
-import scarf3 from "../../assets/images/products/6fashions/scarf3.png";
-import scarf4 from "../../assets/images/products/6fashions/scarf4.jpg";
-import scarf5 from "../../assets/images/products/6fashions/scarf5.jpg";
-import scarf6 from "../../assets/images/products/6fashions/scarf6.jpg";
-import scarf7 from "../../assets/images/products/6fashions/scarf7.png";
-import scarf8 from "../../assets/images/products/6fashions/scarf8.png";
+import scarf1 from "../../assets/images/products/6fashions/f6-001.jpg";
+import scarf2 from "../../assets/images/products/6fashions/f6-002.jpg";
+import scarf3 from "../../assets/images/products/6fashions/f6-003.jpg";
+import scarf4 from "../../assets/images/products/6fashions/f6-004.jpg";
+import scarf5 from "../../assets/images/products/6fashions/f6-005.jpg";
+import scarf6 from "../../assets/images/products/6fashions/f6-006.jpg";
+import scarf7 from "../../assets/images/products/6fashions/f6-007.jpg";
+import scarf8 from "../../assets/images/products/6fashions/f6-008.jpg";
 
 function ProductCategories() {
   const categories = [
@@ -62,8 +74,9 @@ function ProductCategories() {
       title: "Fashion Lace & Crochet",
       description:
         "Delicate lace and crochet pieces perfect for beach wear and summer fashion. Handcrafted details with bohemian charm.",
-      productCount: 14,
+      productCount: 4,
       backgroundColor: colors.background.whiteChocolate,
+      images: [lace1, lace2, lace3, lace4],
     },
     {
       id: "velvet",
@@ -79,8 +92,9 @@ function ProductCategories() {
       title: "Fashion Holiday",
       description:
         "Festive and glamorous pieces featuring sequins, metallics, and statement designs. Perfect for celebrations and special events.",
-      productCount: 8,
+      productCount: 4,
       backgroundColor: colors.background.whiteChocolate,
+      images: [holiday1, holiday2, holiday3, holiday4],
     },
     {
       id: "scarf",

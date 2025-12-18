@@ -52,25 +52,16 @@ function WhyChooseUs() {
         style={{ zIndex: 1, opacity: 0.05 }}
       />
 
-      {/* 渐变遮罩 */}
-      <div
-        className="absolute top-0 left-0 w-full h-full"
-        style={{
-          background: 'linear-gradient(180deg, rgba(26,61,92,0.1) 0%, rgba(26,61,92,0.5) 100%)',
-          zIndex: 2,
-        }}
-      />
-
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          {/* Badge - 仿照 FinalCTA 的样式 */}
+          {/* Badge */}
           <div className="inline-block mb-6">
             <div
               className="uppercase text-sm tracking-wider pb-2 border-b-2"
               style={{
-                color: colors.text.light,
-                borderColor: colors.text.light,
+                color: colors.text.secondary,
+                borderColor: colors.text.secondary,
                 fontFamily: typography.fontFamily.body,
                 fontWeight: typography.fontWeight.medium,
               }}
@@ -83,14 +74,14 @@ function WhyChooseUs() {
             className="text-4xl md:text-5xl lg:text-6xl"
             style={{
               fontFamily: typography.fontFamily.heading,
-              color: colors.text.light,
+              color: colors.text.primary,
               lineHeight: typography.lineHeight.tight,
               letterSpacing: typography.letterSpacing.tight,
             }}
           >
             Trusted Manufacturing Excellence for Your
             <br />
-             <span style={{ color: '#c9a668' }}>Brand Success</span>
+             <span style={{ color: '#A97B54' }}>Brand Success</span>
           </h2>
         </div>
 
@@ -99,11 +90,11 @@ function WhyChooseUs() {
           {attributes.map((attr, index) => (
             <div
               key={index}
-              className="p-8 rounded-2xl transition-all duration-300 hover:scale-105"
+              className="p-8 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{
-                backgroundColor: 'rgba(47, 79, 107, 0.4)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
+                backgroundColor: colors.background.whiteChocolate,
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
+                border: '1px solid rgba(212, 199, 166, 0.3)',
               }}
             >
               {/* Icon */}
@@ -120,7 +111,7 @@ function WhyChooseUs() {
                 className="text-xl md:text-2xl mb-2"
                 style={{
                   fontFamily: typography.fontFamily.heading,
-                  color: colors.text.light,
+                  color: colors.text.primary,
                   fontWeight: 600,
                 }}
               >
@@ -131,7 +122,7 @@ function WhyChooseUs() {
                 className="text-sm md:text-base leading-relaxed"
                 style={{
                   fontFamily: typography.fontFamily.body,
-                  color: 'rgba(255, 255, 255, 0.8)',
+                  color: colors.text.secondary,
                   lineHeight: '1.7',
                 }}
               >

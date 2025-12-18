@@ -14,6 +14,7 @@ export const colors = {
     isabelline: '#F7F4EE',      // 象牙白
     whiteChocolate: '#EDE7DA',  // 白巧克力色
     darkVanilla: '#D4C7A6',     // 深香草色
+    slightWhite:'#FFFFFF'
   },
 
   // 按钮色

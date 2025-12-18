@@ -11,13 +11,13 @@ function Footer() {
     >
       <div className="max-w-7xl mx-auto">
 
-        {/* 中间区域：大标题 BREEZE FA */}
-        <div className="mb-10 pb-16 pt-16 border-b border-gray-200">
+        {/* 中间区域：大标题 */}
+        <div className="mb-10 pb-8 pt-8 border-b border-gray-200">
           <h2
             style={{
               fontFamily: typography.fontFamily.heading,
               color: colors.text.secondary,
-              fontSize: 'clamp(4rem, 15vw, 12rem)',
+              fontSize: 'clamp(2rem, 7.5vw, 6rem)',
               lineHeight: '1',
 
             }}
@@ -37,7 +37,7 @@ function Footer() {
             }}
             className="text-base"
           >
-            2024-{currentYear} Breeze Fashion. All Rights Reserved.
+            © 2024-{currentYear} Breeze Fashion. All Rights Reserved.
           </p>
         </div>
       </div>

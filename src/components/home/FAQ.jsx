@@ -38,7 +38,7 @@ function FAQ() {
   return (
     <section
       className="relative py-12 px-6 md:px-12 lg:px-24 overflow-hidden"
-      style={{ backgroundColor: colors.background.whiteChocolate }}
+      style={{ backgroundColor: colors.background.slightWhite }}
     >
       {/* 背景纹理图片 */}
       <img

@@ -46,7 +46,7 @@ function OurServices() {
     <section
       id="our-services"
       className="relative py-20 px-6 md:px-12 lg:px-24 overflow-hidden"
-      style={{ backgroundColor: colors.background.isabelline }}
+      style={{ backgroundColor: colors.background.slightWhite }}
     >
       {/* Background grain texture */}
       <img
