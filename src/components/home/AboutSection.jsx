@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { colors, typography } from '../../lib/designTokens';
 import factoryImage from '../../assets/images/sz-factory-v2.png';
+import grainImg from '../../assets/images/common/grain.png';
 
 function AboutSection() {
   const metrics = [
@@ -14,7 +15,7 @@ function AboutSection() {
     <section className="relative py-20 px-6 md:px-12 lg:px-24 overflow-hidden" style={{ backgroundColor: colors.background.slightWhite }}>
       {/* Background grain texture */}
       <img
-        src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b29f23c5b3038c9ea552cd_grain.png"
+        src={grainImg}
         alt=""
         className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
         style={{ zIndex: 0, opacity: 0.03 }}

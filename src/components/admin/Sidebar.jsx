@@ -1,4 +1,5 @@
 import { colors, typography } from '../../lib/designTokens';
+import logoImg from '../../assets/images/common/logo.svg';
 
 function Sidebar({ activeMenu, setActiveMenu, currentUser, onLogout }) {
   const menuItems = [
@@ -52,7 +53,7 @@ function Sidebar({ activeMenu, setActiveMenu, currentUser, onLogout }) {
       <div className="p-6 border-b" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
         <div className="flex items-center gap-3">
           <img
-            src="https://cdn.prod.website-files.com/677df2203175761c2bf874cb/67aedea7a758264cf622b051_Group-1.svg"
+            src={logoImg}
             alt="Breeze Fashion"
             className="h-10 w-10"
           />

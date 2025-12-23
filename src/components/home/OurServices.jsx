@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { colors, typography } from "../../lib/designTokens";
+import grainImg from '../../assets/images/common/grain.png';
+import arrowRightImg from '../../assets/images/common/arrow-narrow-right.svg';
 import s1Image from "../../assets/images/service/bs1.png";
 import s2Image from "../../assets/images/service/bs2.png";
 import s3Image from "../../assets/images/service/bs3.png";
@@ -50,7 +52,7 @@ function OurServices() {
     >
       {/* Background grain texture */}
       <img
-        src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b29f23c5b3038c9ea552cd_grain.png"
+        src={grainImg}
         alt=""
         className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
         style={{ zIndex: 0, opacity: 0.03 }}
@@ -152,7 +154,7 @@ function OurServices() {
                 {/* Arrow Icon */}
                 <div className="ml-4 flex-shrink-0">
                   <img
-                    src="https://cdn.prod.website-files.com/677df2203175761c2bf874cb/67b695171f9d1f76430668c6_arrow-narrow-right.svg"
+                    src={arrowRightImg}
                     alt=""
                     className="w-8 h-8 transition-transform duration-300"
                     style={{

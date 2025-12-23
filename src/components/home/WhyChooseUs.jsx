@@ -1,36 +1,44 @@
 import { colors, typography } from '../../lib/designTokens';
+import grainImg from '../../assets/images/common/grain.png';
+import overlayImg from '../../assets/images/common/image-overlay.png';
+import icon1 from '../../assets/images/common/icon-1.png';
+import icon2 from '../../assets/images/common/icon-2.png';
+import icon3 from '../../assets/images/common/icon-3.png';
+import icon4 from '../../assets/images/common/icon-4.png';
+import icon5 from '../../assets/images/common/icon-5.png';
+import icon6 from '../../assets/images/common/icon-6.png';
 
 function WhyChooseUs() {
   const attributes = [
     {
-      icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1adf84997b44f076803_08dbb3cd-14d4-4ae5-8212-44c0247b164f.png',
+      icon: icon1,
       title: '15+ Years of Expertise',
-      description: 'Since 2009, we’ve evolved from a designer kimono specialist to a full-range fashion manufacturer, delivering seasonal styles that keep your collections ahead of trends.'
+      description: 'Since 2009, we've evolved from a designer kimono specialist to a full-range fashion manufacturer, delivering seasonal styles that keep your collections ahead of trends.'
     },
     {
-      icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ada682f9bde562529f_08dbb3cd-14d4-4ae5-8212-44c0247b164f-1.png',
+      icon: icon2,
       title: 'End-to-End Quality Assurance',
       description: 'We control every step—from premium yarn selection to weaving, dyeing, and finishing. Our in-house printing expertise and SA8000-certified quality checks ensure vibrant, durable products.'
     },
     {
-      icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ada8e69583e96e0887_08dbb3cd-14d4-4ae5-8212-44c0247b164f-2.png',
+      icon: icon3,
       title: 'Dual-Factory Global Production',
       description: 'Our China (Suzhou) and Vietnam (Ho Chi Minh City) facilities produce ​10,000+ units/day (4,810/day in China + 3,500/day in Vietnam), offering flexible scalability for both small-batch fast fashion and large-volume orders.'
     },
     {
-      icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ad0d3994b9838a79dd_08dbb3cd-14d4-4ae5-8212-44c0247b164f-3.png',
+      icon: icon4,
       title: 'Trusted by 86,000+ Global Buyers',
       description: 'Serving ​86,000+ international clients (brands/retailers), our products are stocked in major department stores and boutiques worldwide—proven by repeat orders and long-term partnerships.'
     },
     {
-      icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1ad0d3994b9838a79d9_08dbb3cd-14d4-4ae5-8212-44c0247b164f-4.png',
+      icon: icon5,
       title: 'Complete Fashion Category Coverage',
       description: 'One-stop sourcing for scarves, beachwear, cover-ups, dresses, knits/wovens accessories, outwears plus pet tees and face masks—curated to meet diverse buyer needs.'
     },
     {
-      icon: 'https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2a1adca60daab55e6cbb7_08dbb3cd-14d4-4ae5-8212-44c0247b164f-5.png',
+      icon: icon6,
       title: 'Flexible MOQ & Lightning-Fast Delivery',
-      description: 'We understand the diverse needs of global buyers. That’s why we offer ​flexible minimum order quantities (MOQs)—from small-batch samples to large-volume production—and deliver with ​industry-leading speed. Whether you need a quick-turn prototype or a fast-fashion collection, our streamlined processes ensure your orders arrive on time, every time.'
+      description: 'We understand the diverse needs of global buyers. That's why we offer ​flexible minimum order quantities (MOQs)—from small-batch samples to large-volume production—and deliver with ​industry-leading speed. Whether you need a quick-turn prototype or a fast-fashion collection, our streamlined processes ensure your orders arrive on time, every time.'
     }
   ];
 
@@ -38,7 +46,7 @@ function WhyChooseUs() {
     <section className="relative overflow-hidden py-20 px-6 md:px-12 lg:px-24" style={{ backgroundColor: '#F7F4EE' }}>
       {/* Background grain texture - 最底层 */}
       <img
-        src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b29f23c5b3038c9ea552cd_grain.png"
+        src={grainImg}
         alt=""
         className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
         style={{ zIndex: 0, opacity: 0.01 }}
@@ -46,7 +54,7 @@ function WhyChooseUs() {
 
       {/* Background overlay - 第二层 */}
       <img
-        src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67aeed40622e86f203929989_image-overlay.png"
+        src={overlayImg}
         alt=""
         className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
         style={{ zIndex: 1, opacity: 0.05 }}

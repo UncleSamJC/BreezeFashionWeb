@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import SubPageHero from '../../components/basic/SubPageHero';
 import { colors, typography } from '../../lib/designTokens';
 import { supabase } from '../../lib/supabase';
+import loginBgImg from '../../assets/images/common/login-bg.png';
 
 function Login() {
   const navigate = useNavigate();
@@ -61,7 +62,7 @@ function Login() {
   return (
     <>
       <SubPageHero
-        backgroundImage="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b2e65c45b0d8c4610607e7_image.png"
+        backgroundImage={loginBgImg}
         title="Admin Login"
         description="Access the admin dashboard to manage your content and settings"
         showButtons={false}

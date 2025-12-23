@@ -2,13 +2,14 @@ import { colors, typography } from '../../lib/designTokens';
 import ReactMarkdown from 'react-markdown';
 import PrimaryButton from '../basic/PrimaryButton';
 import { Link } from 'react-router-dom';
+import grainImg from '../../assets/images/common/grain.png';
 
 function BlogContentTemplate({ post, relatedPosts = [] }) {
   return (
     <div className="relative min-h-screen" style={{ backgroundColor: colors.background.isabelline }}>
       {/* Global Background grain texture */}
       <img
-        src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b29f23c5b3038c9ea552cd_grain.png"
+        src={grainImg}
         alt=""
         className="fixed top-0 left-0 w-full h-full object-cover pointer-events-none"
         style={{ zIndex: 0, opacity: 0.03 }}

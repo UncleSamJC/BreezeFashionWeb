@@ -1,5 +1,6 @@
 import { colors, typography } from "../../lib/designTokens";
 import { Link } from "react-router-dom";
+import grainImg from '../../assets/images/common/grain.png';
 
 // Fashion Kimono images
 import kimono1 from "../../assets/images/products/1fashionk/1U107039.jpg";
@@ -117,7 +118,7 @@ function ProductCategories() {
         >
           {/* Background grain texture */}
           <img
-            src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b29f23c5b3038c9ea552cd_grain.png"
+            src={grainImg}
             alt=""
             className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
             style={{ zIndex: 0, opacity: 0.03 }}

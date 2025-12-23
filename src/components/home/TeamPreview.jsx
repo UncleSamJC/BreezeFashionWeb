@@ -1,4 +1,6 @@
 import { colors, typography } from '../../lib/designTokens';
+import grainImg from '../../assets/images/common/grain.png';
+import overlayImg from '../../assets/images/common/image-overlay.png';
 
 function TeamPreview() {
   const teamMembers = [
@@ -19,7 +21,7 @@ function TeamPreview() {
     >
       {/* 背景纹理图片 */}
       <img
-        src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67b29f23c5b3038c9ea552cd_grain.png"
+        src={grainImg}
         alt=""
         className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
         style={{ opacity: 0.5, zIndex: 0 }}
@@ -27,7 +29,7 @@ function TeamPreview() {
 
       {/* 背景遮罩图片 */}
       <img
-        src="https://cdn.prod.website-files.com/67aec585824eadef2eebc54f/67aeed40622e86f203929989_image-overlay.png"
+        src={overlayImg}
         alt=""
         className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
         style={{ opacity: 0.3, zIndex: 1 }}
