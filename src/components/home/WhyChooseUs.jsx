@@ -13,7 +13,7 @@ function WhyChooseUs() {
     {
       icon: icon1,
       title: '15+ Years of Expertise',
-      description: 'Since 2009, we've evolved from a designer kimono specialist to a full-range fashion manufacturer, delivering seasonal styles that keep your collections ahead of trends.'
+      description: 'Since 2009, we have evolved from a designer kimono specialist to a full-range fashion manufacturer, delivering seasonal styles that keep your collections ahead of trends.'
     },
     {
       icon: icon2,
@@ -38,7 +38,7 @@ function WhyChooseUs() {
     {
       icon: icon6,
       title: 'Flexible MOQ & Lightning-Fast Delivery',
-      description: 'We understand the diverse needs of global buyers. That's why we offer ​flexible minimum order quantities (MOQs)—from small-batch samples to large-volume production—and deliver with ​industry-leading speed. Whether you need a quick-turn prototype or a fast-fashion collection, our streamlined processes ensure your orders arrive on time, every time.'
+      description: "We understand the diverse needs of global buyers. That's why we offer flexible minimum order quantities (MOQs)—from small-batch samples to large-volume production—and deliver with industry-leading speed. Whether you need a quick-turn prototype or a fast-fashion collection, our streamlined processes ensure your orders arrive on time, every time."
     }
   ];
 
