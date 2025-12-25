@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { colors, typography } from '../../lib/designTokens';
 import PrimaryButton from '../basic/PrimaryButton';
@@ -5,14 +6,50 @@ import SecondaryButton from '../basic/SecondaryButton';
 import heroVideo from '../../assets/videos/hero-bg-22e74ef19.mp4';
 
 function Hero() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // 尝试播放视频
+    const playVideo = async () => {
+      try {
+        await video.play();
+      } catch (error) {
+        // 如果自动播放失败，监听用户交互后再播放
+        const handleInteraction = () => {
+          video.play();
+          document.removeEventListener('touchstart', handleInteraction);
+          document.removeEventListener('click', handleInteraction);
+        };
+        document.addEventListener('touchstart', handleInteraction, { once: true });
+        document.addEventListener('click', handleInteraction, { once: true });
+      }
+    };
+
+    // 视频准备好后播放
+    if (video.readyState >= 3) {
+      playVideo();
+    } else {
+      video.addEventListener('canplay', playVideo, { once: true });
+    }
+
+    return () => {
+      video.removeEventListener('canplay', playVideo);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background Video */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
+        preload="auto"
         className="absolute top-0 left-0 w-full h-full object-cover"
         style={{ zIndex: 0 }}
       >
