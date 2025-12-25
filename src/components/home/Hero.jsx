@@ -4,6 +4,7 @@ import { colors, typography } from '../../lib/designTokens';
 import PrimaryButton from '../basic/PrimaryButton';
 import SecondaryButton from '../basic/SecondaryButton';
 import heroVideo from '../../assets/videos/hero-bg-22e74ef19.mp4';
+import heroPoster from '../../assets/images/common/hero-bg-mp4-first-frame.png';
 
 function Hero() {
   const videoRef = useRef(null);
@@ -45,6 +46,7 @@ function Hero() {
       {/* Background Video */}
       <video
         ref={videoRef}
+        poster={heroPoster}
         autoPlay
         loop
         muted
