@@ -67,7 +67,7 @@ function Dashboard() {
     return (
       <div
         className="min-h-screen flex items-center justify-center"
-        style={{ backgroundColor: colors.background.isabelline }}
+        style={{ backgroundColor: colors.background.avacado }}
       >
         <div
           className="text-2xl"
@@ -85,7 +85,7 @@ function Dashboard() {
   return (
     <div
       className="min-h-screen flex"
-      style={{ backgroundColor: colors.background.isabelline }}
+      style={{ backgroundColor: colors.background.avacado }}
     >
       {/* Sidebar */}
       <Sidebar

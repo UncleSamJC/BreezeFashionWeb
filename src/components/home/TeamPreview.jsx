@@ -1,6 +1,4 @@
 import { colors, typography } from '../../lib/designTokens';
-import grainImg from '../../assets/images/common/grain.png';
-import overlayImg from '../../assets/images/common/image-overlay.png';
 
 function TeamPreview() {
   const teamMembers = [
@@ -19,22 +17,6 @@ function TeamPreview() {
       className="relative py-20 px-6 md:px-12 lg:px-24 overflow-hidden"
       style={{ backgroundColor: colors.secondary }}
     >
-      {/* 背景纹理图片 */}
-      <img
-        src={grainImg}
-        alt=""
-        className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
-        style={{ opacity: 0.5, zIndex: 0 }}
-      />
-
-      {/* 背景遮罩图片 */}
-      <img
-        src={overlayImg}
-        alt=""
-        className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
-        style={{ opacity: 0.3, zIndex: 1 }}
-      />
-
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

@@ -1,6 +1,4 @@
 import { colors, typography } from '../../lib/designTokens';
-import grainImg from '../../assets/images/common/grain.png';
-import overlayImg from '../../assets/images/common/image-overlay.png';
 import icon1 from '../../assets/images/common/icon-1.png';
 import icon2 from '../../assets/images/common/icon-2.png';
 import icon3 from '../../assets/images/common/icon-3.png';
@@ -44,22 +42,6 @@ function WhyChooseUs() {
 
   return (
     <section className="relative overflow-hidden py-20 px-6 md:px-12 lg:px-24" style={{ backgroundColor: '#F7F4EE' }}>
-      {/* Background grain texture - 最底层 */}
-      <img
-        src={grainImg}
-        alt=""
-        className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
-        style={{ zIndex: 0, opacity: 0.01 }}
-      />
-
-      {/* Background overlay - 第二层 */}
-      <img
-        src={overlayImg}
-        alt=""
-        className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
-        style={{ zIndex: 1, opacity: 0.05 }}
-      />
-
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">

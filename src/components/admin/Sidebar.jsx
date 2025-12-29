@@ -1,5 +1,5 @@
 import { colors, typography } from '../../lib/designTokens';
-import logoImg from '../../assets/images/common/logo.svg';
+import logoImg from '../../assets/images/web-logo-v2.png';
 
 function Sidebar({ activeMenu, setActiveMenu, currentUser, onLogout }) {
   const menuItems = [
@@ -45,7 +45,7 @@ function Sidebar({ activeMenu, setActiveMenu, currentUser, onLogout }) {
     <aside
       className="w-64 min-h-screen border-r flex flex-col"
       style={{
-        backgroundColor: colors.secondary,
+        backgroundColor: colors.avacado,
         borderColor: colors.border.medium,
       }}
     >

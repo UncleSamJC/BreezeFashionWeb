@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import SubPageHero from '../../components/basic/SubPageHero';
 import { colors, typography } from '../../lib/designTokens';
 import { supabase } from '../../lib/supabase';
-import loginBgImg from '../../assets/images/common/login-bg.png';
+import loginBgImg from '../../assets/images/common/grain.png';
 
 function Login() {
   const navigate = useNavigate();

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { colors, typography } from '../../lib/designTokens';
 import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
+import useParallax from '../../hooks/useParallax';
 
 function SubPageHero({
   backgroundImage,
@@ -9,14 +10,20 @@ function SubPageHero({
   description,
   showButtons = true
 }) {
+  const { style: parallaxStyle } = useParallax(0.3);
+
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center px-6 md:px-12 lg:px-24 overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image with Parallax */}
       <img
         src={backgroundImage}
         alt=""
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        style={{ zIndex: 0 }}
+        className="absolute top-0 left-0 w-full object-cover"
+        style={{
+          zIndex: 0,
+          height: '120%',
+          ...parallaxStyle,
+        }}
         loading="lazy"
       />
 

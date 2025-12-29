@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import { colors, typography } from '../../lib/designTokens';
 import PrimaryButton from '../basic/PrimaryButton';
 import SecondaryButton from '../basic/SecondaryButton';
+import useParallax from '../../hooks/useParallax';
 import heroVideo from '../../assets/videos/hero-bg-22e74ef19.mp4';
 import heroPoster from '../../assets/images/common/hero-bg-mp4-first-frame.png';
 
 function Hero() {
   const videoRef = useRef(null);
+  const { style: parallaxStyle } = useParallax(0.3);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -43,7 +45,7 @@ function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-24 pt-20 overflow-hidden">
-      {/* Background Video */}
+      {/* Background Video with Parallax */}
       <video
         ref={videoRef}
         poster={heroPoster}
@@ -52,8 +54,12 @@ function Hero() {
         muted
         playsInline
         preload="auto"
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        style={{ zIndex: 0 }}
+        className="absolute top-0 left-0 w-full object-cover"
+        style={{
+          zIndex: 0,
+          height: '120%',
+          ...parallaxStyle,
+        }}
       >
         <source
           src={heroVideo}

@@ -188,7 +188,7 @@ function PostBlog() {
   };
 
   return (
-    <div className="max-w-4xl">
+    <div>
       <div
         className="p-8 rounded-xl"
         style={{ backgroundColor: colors.background.primary }}
@@ -215,7 +215,17 @@ function PostBlog() {
                 color: colors.text.secondary,
               }}
             >
-              <li>1. Select a category for your blog post</li>
+              <li>
+                  1. Select a category for your blog post
+                  {" "}
+                  <a
+                    href="/templates/blog-template.md"
+                    download="blog-template.md"
+                    style={{ color: colors.primary, textDecoration: "underline" }}
+                  >
+                    Download template
+                  </a>
+                </li> 
               <li>
                 2.Optionally upload a featured image - it will be added to the
                 file(16:9 横宽比，小于1M)
@@ -237,7 +247,7 @@ function PostBlog() {
                 color: colors.text.primary,
               }}
             >
-              Category *
+              STEP1： Select Category 
             </label>
             <select
               id="category"
@@ -267,7 +277,7 @@ function PostBlog() {
                 color: colors.text.primary,
               }}
             >
-              Featured Image (optional)
+              STEP2： Add Featured Image (optional)
             </label>
             <input
               type="file"
@@ -321,7 +331,7 @@ function PostBlog() {
                 color: colors.text.primary,
               }}
             >
-              Markdown File (.md) *
+              STEP3：Add Markdown File (.md) 
             </label>
 
             {/* Drag & Drop Area */}

@@ -33,7 +33,7 @@ function SendEmail() {
   };
 
   return (
-    <div className="max-w-3xl">
+    <div>
       <div
         className="p-8 rounded-xl"
         style={{ backgroundColor: colors.background.primary }}

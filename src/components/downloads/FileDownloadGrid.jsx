@@ -6,6 +6,7 @@ function FileDownloadGrid({ downloads }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
   const [email, setEmail] = useState('');
+  const [agreeToEmails, setAgreeToEmails] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error'
 
@@ -33,6 +34,7 @@ function FileDownloadGrid({ downloads }) {
     setIsModalOpen(false);
     setSelectedFile(null);
     setEmail('');
+    setAgreeToEmails(false);
     setSubmitStatus(null);
   };
 
@@ -101,6 +103,47 @@ function FileDownloadGrid({ downloads }) {
     <div style={{ backgroundColor: colors.background.primary }}>
       <section className="py-20 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto">
+          {/* Empty State */}
+          {downloads.length === 0 && (
+            <div
+              className="text-center py-16 px-6 rounded-xl"
+              style={{ backgroundColor: colors.background.isabelline }}
+            >
+              <svg
+                className="w-16 h-16 mx-auto mb-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                style={{ color: colors.text.secondary }}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+              <h3
+                className="text-2xl mb-2"
+                style={{
+                  fontFamily: typography.fontFamily.heading,
+                  color: colors.text.primary,
+                }}
+              >
+                No files available to download
+              </h3>
+              <p
+                className="text-base"
+                style={{
+                  fontFamily: typography.fontFamily.body,
+                  color: colors.text.secondary,
+                }}
+              >
+                Please check back later for new resources.
+              </p>
+            </div>
+          )}
+
           {Object.entries(groupedDownloads).map(([period, files]) => (
             <div key={period} className="mb-16">
               {/* Period Title */}
@@ -236,7 +279,7 @@ function FileDownloadGrid({ downloads }) {
                           e.target.style.backgroundColor = colors.button.primary;
                         }}
                       >
-                        View
+                        Download
                       </button>
                     </div>
                   </div>
@@ -326,7 +369,7 @@ function FileDownloadGrid({ downloads }) {
                 </svg>
                 <div>
                   <p
-                    className="font-medium mb-1"
+                    className="font-medium"
                     style={{
                       fontFamily: typography.fontFamily.body,
                       color: colors.text.primary,
@@ -335,15 +378,7 @@ function FileDownloadGrid({ downloads }) {
                   >
                     Provide your email, and we will send the file to you shortly.
                   </p>
-                  <p
-                    className="text-sm"
-                    style={{
-                      fontFamily: typography.fontFamily.body,
-                      color: colors.text.secondary,
-                    }}
-                  >
-                    We'll also keep you updated with our latest resources.
-                  </p>
+
                 </div>
               </div>
 
@@ -374,6 +409,38 @@ function FileDownloadGrid({ downloads }) {
                       backgroundColor: colors.background.primary,
                     }}
                   />
+                </div>
+
+                {/* Consent Checkbox */}
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="agreeToEmails"
+                    checked={agreeToEmails}
+                    onChange={(e) => setAgreeToEmails(e.target.checked)}
+                    className="mt-1 w-4 h-4 rounded border-gray-300 cursor-pointer"
+                    style={{ accentColor: colors.primary }}
+                  />
+                  <label
+                    htmlFor="agreeToEmails"
+                    className="text-sm cursor-pointer"
+                    style={{
+                      fontFamily: typography.fontFamily.body,
+                      color: colors.text.secondary,
+                      lineHeight: '1.5',
+                    }}
+                  >
+                    I agree to receive product updates and marketing emails.
+                    You can unsubscribe at any time.{' '}
+                    <a
+                      href="/privacy-policy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: colors.primary, textDecoration: 'underline' }}
+                    >
+                      View our Privacy Policy
+                    </a>
+                  </label>
                 </div>
 
                 {/* Status Messages */}
@@ -415,7 +482,7 @@ function FileDownloadGrid({ downloads }) {
                 <div className="flex gap-3 pt-2">
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !agreeToEmails}
                     className="flex-1 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{
                       backgroundColor: colors.button.primary,

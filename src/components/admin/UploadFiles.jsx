@@ -170,23 +170,37 @@ function UploadFiles() {
     }
   };
 
-  // Delete file from Supabase
+  // Delete file from Supabase (both Storage and Database)
   const deleteFile = async (fileName) => {
     if (!confirm(`Are you sure you want to delete ${fileName}?`)) return;
 
     try {
-      const { error } = await supabase.storage
+      // Step 1: Delete from Storage
+      const { error: storageError } = await supabase.storage
         .from('product_pdfs')
         .remove([fileName]);
 
-      if (error) {
-        console.error('Delete error:', error);
-        setError(`Failed to delete ${fileName}`);
-      } else {
-        setSuccessMessage(`${fileName} deleted successfully`);
-        loadUploadedFiles();
-        setTimeout(() => setSuccessMessage(''), 3000);
+      if (storageError) {
+        console.error('Storage delete error:', storageError);
+        setError(`Failed to delete ${fileName} from storage`);
+        return;
       }
+
+      // Step 2: Delete from Database
+      const { error: dbError } = await supabase
+        .from('downloadable_pdfs_info')
+        .delete()
+        .eq('storage_path', fileName);
+
+      if (dbError) {
+        console.error('Database delete error:', dbError);
+        setError(`File deleted from storage but failed to remove database record`);
+        return;
+      }
+
+      setSuccessMessage(`${fileName} deleted successfully`);
+      loadUploadedFiles();
+      setTimeout(() => setSuccessMessage(''), 3000);
     } catch (error) {
       console.error('Error deleting file:', error);
       setError('Failed to delete file');
