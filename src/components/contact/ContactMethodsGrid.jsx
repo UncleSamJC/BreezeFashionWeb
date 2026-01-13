@@ -53,10 +53,10 @@ function ContactMethodsGrid() {
         </svg>
       ),
       title: 'Phone',
-      description: '+1 (555) 000-0000',
+      description: '+1 (250) 000-0000',
       subtext: 'Mon-Fri 8 AM to 5 PM',
       action: 'Call Now',
-      link: 'tel:+15550000000'
+      link: 'tel:+12500000000'
     },
     {
       icon: (
@@ -66,8 +66,8 @@ function ContactMethodsGrid() {
         </svg>
       ),
       title: 'Office',
-      description: '2118 Thornridge Cir. Syracuse',
-      subtext: 'Connecticut 35624',
+      description: '4800 Island Hyw, Nanaimo',
+      subtext: 'BC',
       action: 'Get Directions',
       link: '#'
     },

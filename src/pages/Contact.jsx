@@ -19,7 +19,6 @@ function Contact() {
 
       <ContactFormNew />
       <ContactMethodsGrid />
-      <TeamPreview />
       <FAQ />
       <FinalCTA />
     </>
