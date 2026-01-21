@@ -20,6 +20,7 @@
     "react-ga4": "^2.1.0",
     "react-hook-form": "^7.59.0",
     "react-markdown": "^10.1.0",
+    "react-pdf": "^10.3.0",
     "react-router-dom": "^7.6.3"
   },
   "devDependencies": {

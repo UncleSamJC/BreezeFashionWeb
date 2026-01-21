@@ -1,6 +1,12 @@
 import { useState } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
 import { colors, typography, borderRadius, transitions } from '../../lib/designTokens';
 import { supabase } from '../../lib/supabase';
+
+// 设置 PDF.js worker
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 function FileDownloadGrid({ downloads }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -9,6 +15,14 @@ function FileDownloadGrid({ downloads }) {
   const [agreeToEmails, setAgreeToEmails] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error'
+
+  // PDF 预览相关 state
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [previewFile, setPreviewFile] = useState(null);
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [pdfLoading, setPdfLoading] = useState(true);
+  const [pdfError, setPdfError] = useState(null);
 
   // Group downloads by year and month
   const groupedDownloads = downloads.reduce((acc, download) => {
@@ -36,6 +50,42 @@ function FileDownloadGrid({ downloads }) {
     setEmail('');
     setAgreeToEmails(false);
     setSubmitStatus(null);
+  };
+
+  // PDF 预览处理函数
+  const handlePreviewClick = (file) => {
+    setPreviewFile(file);
+    setIsPreviewOpen(true);
+    setPageNumber(1);
+    setPdfLoading(true);
+    setPdfError(null);
+  };
+
+  const handleClosePreview = () => {
+    setIsPreviewOpen(false);
+    setPreviewFile(null);
+    setNumPages(null);
+    setPageNumber(1);
+    setPdfError(null);
+  };
+
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+    setPdfLoading(false);
+  };
+
+  const onDocumentLoadError = (error) => {
+    console.error('PDF load error:', error);
+    setPdfError('Failed to load PDF');
+    setPdfLoading(false);
+  };
+
+  const goToPrevPage = () => {
+    setPageNumber((prev) => Math.max(prev - 1, 1));
+  };
+
+  const goToNextPage = () => {
+    setPageNumber((prev) => Math.min(prev + 1, numPages || 1));
   };
 
   const handleSubmitEmail = async (e) => {
@@ -203,22 +253,28 @@ function FileDownloadGrid({ downloads }) {
                         className="md:hidden font-semibold"
                         style={{ color: colors.text.secondary }}
                       >
-                        版本:
+                        Version:
                       </span>
-                      <span style={{ fontWeight: typography.fontWeight.medium }}>
+                      <span style={{ fontWeight: typography.fontWeight.medium, color: colors.text.secondary }}>
                         {file.version}
                       </span>
                     </div>
 
-                    {/* Name */}
+                    {/* Name - Clickable for Preview */}
                     <div className="col-span-1 md:col-span-4 flex items-center gap-2">
                       <span
                         className="md:hidden font-semibold"
                         style={{ color: colors.text.secondary }}
                       >
-                        名称:
+                        File Name:
                       </span>
-                      <span className="break-words">{file.name}</span>
+                      <button
+                        onClick={() => handlePreviewClick(file)}
+                        className="break-words text-left underline cursor-pointer"
+                        style={{ color: colors.text.secondary }}
+                      >
+                        {file.name}
+                      </button>
                     </div>
 
                     {/* Size */}
@@ -227,7 +283,7 @@ function FileDownloadGrid({ downloads }) {
                         className="md:hidden font-semibold"
                         style={{ color: colors.text.secondary }}
                       >
-                        大小:
+                        Size:
                       </span>
                       <span style={{ color: colors.text.secondary }}>
                         {file.size}
@@ -240,7 +296,7 @@ function FileDownloadGrid({ downloads }) {
                         className="md:hidden font-semibold"
                         style={{ color: colors.text.secondary }}
                       >
-                        类型:
+                        Type:
                       </span>
                       <span style={{ color: colors.text.secondary }}>
                         {file.type}
@@ -253,7 +309,7 @@ function FileDownloadGrid({ downloads }) {
                         className="md:hidden font-semibold"
                         style={{ color: colors.text.secondary }}
                       >
-                        上传日期:
+                        Upload At:
                       </span>
                       <span style={{ color: colors.text.secondary, fontSize: typography.fontSize.sm }}>
                         {new Date(file.date).toLocaleDateString('zh-CN')}
@@ -507,6 +563,155 @@ function FileDownloadGrid({ downloads }) {
                 </div>
               </form>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* PDF Preview Modal */}
+      {isPreviewOpen && previewFile && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
+          onClick={handleClosePreview}
+        >
+          <div
+            className="w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col"
+            style={{
+              backgroundColor: colors.background.primary,
+              maxHeight: '90vh',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div
+              className="px-6 py-4 border-b flex items-center justify-between flex-shrink-0"
+              style={{ borderColor: colors.border.light }}
+            >
+              <div>
+                <h3
+                  className="text-xl md:text-2xl"
+                  style={{
+                    fontFamily: typography.fontFamily.heading,
+                    color: colors.text.primary,
+                  }}
+                >
+                  PDF Preview
+                </h3>
+                <p
+                  className="text-sm mt-1"
+                  style={{
+                    fontFamily: typography.fontFamily.body,
+                    color: colors.text.secondary,
+                  }}
+                >
+                  {previewFile.name}
+                </p>
+              </div>
+              <button
+                onClick={handleClosePreview}
+                className="p-2 rounded-lg hover:bg-opacity-10 transition-all"
+                style={{ color: colors.text.secondary }}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* PDF Content */}
+            <div
+              className="flex-1 overflow-auto p-4 flex justify-center"
+              style={{ backgroundColor: colors.background.isabelline }}
+            >
+              {pdfLoading && (
+                <div className="flex items-center justify-center py-20">
+                  <div
+                    className="animate-spin rounded-full h-12 w-12 border-4 border-t-transparent"
+                    style={{ borderColor: colors.primary, borderTopColor: 'transparent' }}
+                  />
+                </div>
+              )}
+
+              {pdfError && (
+                <div className="flex flex-col items-center justify-center py-20">
+                  <svg
+                    className="w-16 h-16 mb-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    style={{ color: colors.text.secondary }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    />
+                  </svg>
+                  <p style={{ color: colors.text.secondary, fontFamily: typography.fontFamily.body }}>
+                    {pdfError}
+                  </p>
+                </div>
+              )}
+
+              <Document
+                file={previewFile.url}
+                onLoadSuccess={onDocumentLoadSuccess}
+                onLoadError={onDocumentLoadError}
+                loading=""
+              >
+                <Page
+                  pageNumber={pageNumber}
+                  renderTextLayer={true}
+                  renderAnnotationLayer={true}
+                  className="shadow-lg"
+                  width={Math.min(800, window.innerWidth - 80)}
+                />
+              </Document>
+            </div>
+
+            {/* Page Navigation */}
+            {numPages && (
+              <div
+                className="px-6 py-4 border-t flex items-center justify-center gap-4 flex-shrink-0"
+                style={{ borderColor: colors.border.light }}
+              >
+                <button
+                  onClick={goToPrevPage}
+                  disabled={pageNumber <= 1}
+                  className="px-4 py-2 rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{
+                    backgroundColor: colors.background.whiteChocolate,
+                    color: colors.text.primary,
+                    fontFamily: typography.fontFamily.body,
+                    border: `1px solid ${colors.border.light}`,
+                  }}
+                >
+                  ← Previous
+                </button>
+                <span
+                  style={{
+                    fontFamily: typography.fontFamily.body,
+                    color: colors.text.primary,
+                  }}
+                >
+                  Page {pageNumber} of {numPages}
+                </span>
+                <button
+                  onClick={goToNextPage}
+                  disabled={pageNumber >= numPages}
+                  className="px-4 py-2 rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{
+                    backgroundColor: colors.background.whiteChocolate,
+                    color: colors.text.primary,
+                    fontFamily: typography.fontFamily.body,
+                    border: `1px solid ${colors.border.light}`,
+                  }}
+                >
+                  Next →
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}

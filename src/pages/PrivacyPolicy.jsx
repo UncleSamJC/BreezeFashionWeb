@@ -199,7 +199,7 @@ function PrivacyPolicy() {
           </p>
           <ul style={listStyle}>
             <li>Clicking the "unsubscribe" link in any marketing email</li>
-            <li>Contacting us directly at info@breezefashion.ca</li>
+            <li>Contacting us directly at sales@breezeie.com</li>
           </ul>
           <p style={paragraphStyle}>
             Please note that even after unsubscribing from marketing emails, you may
@@ -267,16 +267,19 @@ function PrivacyPolicy() {
               Breeze Fashion
             </p>
             <p style={paragraphStyle} className="mb-1">
-              4800 N Island Hwy, Nanaimo, BC V9T 1W6, Canada
+              Build 29. No. 399 Xiarong Road, Wujiang, Suzhou, China
             </p>
             <p style={paragraphStyle} className="mb-1">
               Email:{' '}
               <a
-                href="mailto:info@breezefashion.ca"
+                href="mailto:sales@breezeie.com"
                 style={{ color: colors.primary }}
               >
-                info@breezefashion.ca
+                sales@breezeie.com
               </a>
+            </p>
+            <p style={paragraphStyle} className="mb-1">
+              Phone: +86 (512) 65981751
             </p>
           </div>
         </section>

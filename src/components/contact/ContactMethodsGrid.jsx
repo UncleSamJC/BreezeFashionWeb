@@ -20,9 +20,9 @@ function ContactMethodsGrid() {
         </svg>
       ),
       title: 'Email',
-      description: 'contact@yourcompany.com',
+      description: 'sales@breezeie.com',
       action: 'Send Email',
-      link: 'mailto:contact@yourcompany.com'
+      link: 'mailto:sales@breezeie.com'
     },
     {
       icon: (
@@ -31,7 +31,7 @@ function ContactMethodsGrid() {
         </svg>
       ),
       title: 'Instagram',
-      description: '@yourcompany',
+      description: '@breezeie',
       action: 'Follow Us',
       link: 'https://instagram.com'
     },
@@ -42,7 +42,7 @@ function ContactMethodsGrid() {
         </svg>
       ),
       title: 'Twitter',
-      description: '@yourcompany',
+      description: '@breezeie',
       action: 'Follow Us',
       link: 'https://twitter.com'
     },
@@ -53,10 +53,8 @@ function ContactMethodsGrid() {
         </svg>
       ),
       title: 'Phone',
-      description: '+1 (250) 000-0000',
-      subtext: 'Mon-Fri 8 AM to 5 PM',
-      action: 'Call Now',
-      link: 'tel:+12500000000'
+      description: '+86 (512) 65981751',
+      subtext: 'Mon-Fri 8 AM to 5 PM'
     },
     {
       icon: (
@@ -66,10 +64,8 @@ function ContactMethodsGrid() {
         </svg>
       ),
       title: 'Office',
-      description: '4800 Island Hyw, Nanaimo',
-      subtext: 'BC',
-      action: 'Get Directions',
-      link: '#'
+      description: 'Build 29. No. 399 Xiarong Road, Wujiang, Suzhou,',
+      subtext: 'China'
     },
   ];
 
@@ -119,7 +115,7 @@ function ContactMethodsGrid() {
               {/* Subtext */}
               {method.subtext && (
                 <p
-                  className="text-sm mb-4"
+                  className="text-base md:text-lg mb-4"
                   style={{
                     fontFamily: typography.fontFamily.body,
                     color: colors.text.secondary,
@@ -130,16 +126,18 @@ function ContactMethodsGrid() {
               )}
 
               {/* Action Link */}
-              <a
-                href={method.link}
-                className="inline-block mt-4 font-medium group-hover:underline"
-                style={{
-                  color: colors.primary,
-                  fontFamily: typography.fontFamily.body,
-                }}
-              >
-                {method.action} →
-              </a>
+              {method.action && (
+                <a
+                  href={method.link}
+                  className="inline-block mt-4 font-medium group-hover:underline"
+                  style={{
+                    color: colors.primary,
+                    fontFamily: typography.fontFamily.body,
+                  }}
+                >
+                  {method.action} →
+                </a>
+              )}
             </div>
           ))}
         </div>
