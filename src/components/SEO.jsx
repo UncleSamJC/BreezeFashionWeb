@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 
 const defaultSEO = {
   siteName: 'Breeze Fashion',
@@ -14,7 +14,6 @@ function SEO({
   image,
   url,
   type = 'website',
-  noIndex = false
 }) {
   const seoTitle = title
     ? `${title} | ${defaultSEO.siteName}`
@@ -23,31 +22,46 @@ function SEO({
   const seoImage = image || defaultSEO.defaultImage;
   const seoUrl = url ? `${defaultSEO.siteUrl}${url}` : defaultSEO.siteUrl;
 
-  return (
-    <Helmet>
-      {/* Primary Meta Tags */}
-      <title>{seoTitle}</title>
-      <meta name="title" content={seoTitle} />
-      <meta name="description" content={seoDescription} />
-      {noIndex && <meta name="robots" content="noindex, nofollow" />}
-      <link rel="canonical" href={seoUrl} />
+  useEffect(() => {
+    // Update title
+    document.title = seoTitle;
 
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={seoUrl} />
-      <meta property="og:title" content={seoTitle} />
-      <meta property="og:description" content={seoDescription} />
-      <meta property="og:image" content={seoImage} />
-      <meta property="og:site_name" content={defaultSEO.siteName} />
+    // Helper function to update or create meta tag
+    const updateMeta = (attribute, value, content) => {
+      let element = document.querySelector(`meta[${attribute}="${value}"]`);
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute(attribute, value);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', content);
+    };
 
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={seoUrl} />
-      <meta name="twitter:title" content={seoTitle} />
-      <meta name="twitter:description" content={seoDescription} />
-      <meta name="twitter:image" content={seoImage} />
-    </Helmet>
-  );
+    // Update primary meta tags
+    updateMeta('name', 'title', seoTitle);
+    updateMeta('name', 'description', seoDescription);
+
+    // Update Open Graph tags
+    updateMeta('property', 'og:type', type);
+    updateMeta('property', 'og:url', seoUrl);
+    updateMeta('property', 'og:title', seoTitle);
+    updateMeta('property', 'og:description', seoDescription);
+    updateMeta('property', 'og:image', seoImage);
+
+    // Update Twitter tags
+    updateMeta('name', 'twitter:url', seoUrl);
+    updateMeta('name', 'twitter:title', seoTitle);
+    updateMeta('name', 'twitter:description', seoDescription);
+    updateMeta('name', 'twitter:image', seoImage);
+
+    // Update canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', seoUrl);
+    }
+  }, [seoTitle, seoDescription, seoImage, seoUrl, type]);
+
+  return null;
 }
 
 export default SEO;

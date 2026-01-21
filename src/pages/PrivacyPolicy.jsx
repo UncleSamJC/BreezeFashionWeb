@@ -33,7 +33,6 @@ function PrivacyPolicy() {
         title="Privacy Policy"
         url="/privacy-policy"
         description="Learn how Breeze Fashion collects, uses, and protects your personal information. Read our privacy policy and data protection practices."
-        noIndex={false}
       />
       <div style={{ backgroundColor: colors.background.primary }}>
         <div className="max-w-4xl mx-auto px-6 md:px-12 py-20 mt-8">
