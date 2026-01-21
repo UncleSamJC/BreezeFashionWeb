@@ -1,3 +1,4 @@
+import SEO from "../components/SEO";
 import Hero from "../components/home/Hero";
 import AboutSection from "../components/home/AboutSection";
 import OurServices from "../components/home/OurServices";
@@ -10,6 +11,10 @@ import FinalCTA from "../components/home/FinalCTA";
 function Home() {
   return (
     <>
+      <SEO
+        url="/"
+        description="Breeze Fashion offers premium fashion manufacturing, OEM services, and quality apparel solutions. Based in Suzhou, China, we deliver excellence in fashion production worldwide."
+      />
       <Hero />
       <AboutSection />
       <Testimonials />

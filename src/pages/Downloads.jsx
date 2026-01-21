@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import SEO from "../components/SEO";
 import SubPageHero from '../components/basic/SubPageHero';
 import Mission from "../components/about/Mission";
 
@@ -62,6 +63,11 @@ function Downloads() {
 
   return (
     <>
+      <SEO
+        title="Downloads"
+        url="/downloads"
+        description="Download product catalogs, specifications, and resources from Breeze Fashion. Access all the files you need for your apparel business."
+      />
       <SubPageHero
         backgroundImage={downloadHeaderImg}
         title="Download all all the files you need"

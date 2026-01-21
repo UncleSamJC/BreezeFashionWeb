@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
+import SEO from '../components/SEO';
 import BlogContentTemplate from '../components/blogdetails/BlogContentTemplate';
 import { getPostBySlug, getRelatedPosts } from '../lib/blogUtils';
 import { colors, typography } from '../lib/designTokens';
@@ -67,7 +68,18 @@ function BlogPost() {
     );
   }
 
-  return <BlogContentTemplate post={post} relatedPosts={relatedPosts} />;
+  return (
+    <>
+      <SEO
+        title={post?.title}
+        url={`/blog/${slug}`}
+        description={post?.excerpt || post?.description}
+        image={post?.coverImage}
+        type="article"
+      />
+      <BlogContentTemplate post={post} relatedPosts={relatedPosts} />
+    </>
+  );
 }
 
 export default BlogPost;

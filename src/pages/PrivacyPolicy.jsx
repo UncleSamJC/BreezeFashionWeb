@@ -1,3 +1,4 @@
+import SEO from "../components/SEO";
 import { colors, typography } from '../lib/designTokens';
 
 function PrivacyPolicy() {
@@ -27,10 +28,17 @@ function PrivacyPolicy() {
   };
 
   return (
-    <div style={{ backgroundColor: colors.background.primary }}>
-      <div className="max-w-4xl mx-auto px-6 md:px-12 py-20 mt-8">
-        {/* Header */}
-        <h1
+    <>
+      <SEO
+        title="Privacy Policy"
+        url="/privacy-policy"
+        description="Learn how Breeze Fashion collects, uses, and protects your personal information. Read our privacy policy and data protection practices."
+        noIndex={false}
+      />
+      <div style={{ backgroundColor: colors.background.primary }}>
+        <div className="max-w-4xl mx-auto px-6 md:px-12 py-20 mt-8">
+          {/* Header */}
+          <h1
           className="text-4xl md:text-5xl mb-4"
           style={{
             fontFamily: typography.fontFamily.heading,
@@ -283,8 +291,9 @@ function PrivacyPolicy() {
             </p>
           </div>
         </section>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
