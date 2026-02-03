@@ -25,30 +25,51 @@ import lace3 from "../../assets/images/products/3fashionlc/f3-003.jpg";
 import lace4 from "../../assets/images/products/3fashionlc/f3-004.jpg";
 
 // Burnout Velvet images
-import velvet1 from "../../assets/images/products/4fashionbv/vv001.jpg";
-import velvet2 from "../../assets/images/products/4fashionbv/vv002.jpg";
-import velvet3 from "../../assets/images/products/4fashionbv/vv003.jpg";
-import velvet4 from "../../assets/images/products/4fashionbv/vv004.jpg";
-import velvet5 from "../../assets/images/products/4fashionbv/vv005.jpg";
-import velvet6 from "../../assets/images/products/4fashionbv/vv006.jpg";
-import velvet7 from "../../assets/images/products/4fashionbv/vv007.jpg";
-import velvet8 from "../../assets/images/products/4fashionbv/vv008.jpg";
+import velvet1 from "../../assets/images/products/4fashionbv-v2/21.jpg";
+import velvet2 from "../../assets/images/products/4fashionbv-v2/22.jpg";
+import velvet3 from "../../assets/images/products/4fashionbv-v2/23.jpg";
+import velvet4 from "../../assets/images/products/4fashionbv-v2/24.jpg";
+import velvet5 from "../../assets/images/products/4fashionbv-v2/25.jpg";
+import velvet6 from "../../assets/images/products/4fashionbv-v2/26.jpg";
+import velvet7 from "../../assets/images/products/4fashionbv-v2/27.jpg";
+import velvet8 from "../../assets/images/products/4fashionbv-v2/28.jpg";
 
 // Fashion Holiday images
-import holiday1 from "../../assets/images/products/5fashionh/f5-001.jpg";
-import holiday2 from "../../assets/images/products/5fashionh/f5-002.jpg";
-import holiday3 from "../../assets/images/products/5fashionh/f5-003.jpg";
-import holiday4 from "../../assets/images/products/5fashionh/f5-004.jpg";
+import holiday1 from "../../assets/images/products/5fashionh-v2/11.jpg";
+import holiday2 from "../../assets/images/products/5fashionh-v2/12.jpg";
+import holiday3 from "../../assets/images/products/5fashionh-v2/13.jpg";
+import holiday4 from "../../assets/images/products/5fashionh-v2/14.jpg";
+import holiday5 from "../../assets/images/products/5fashionh-v2/15.jpg";
+import holiday6 from "../../assets/images/products/5fashionh-v2/16.jpg";
+import holiday7 from "../../assets/images/products/5fashionh-v2/17.jpg";
+import holiday8 from "../../assets/images/products/5fashionh-v2/18.jpg";
 
-// Fashion Scarf images
-import scarf1 from "../../assets/images/products/6fashions/f6-001.jpg";
-import scarf2 from "../../assets/images/products/6fashions/f6-002.jpg";
-import scarf3 from "../../assets/images/products/6fashions/f6-003.jpg";
-import scarf4 from "../../assets/images/products/6fashions/f6-004.jpg";
-import scarf5 from "../../assets/images/products/6fashions/f6-005.jpg";
-import scarf6 from "../../assets/images/products/6fashions/f6-006.jpg";
-import scarf7 from "../../assets/images/products/6fashions/f6-007.jpg";
-import scarf8 from "../../assets/images/products/6fashions/f6-008.jpg";
+// Fashion Scarf images (3 series)
+import scarf31 from "../../assets/images/products/6fashions-v2/31.jpg";
+import scarf32 from "../../assets/images/products/6fashions-v2/32.jpg";
+import scarf33 from "../../assets/images/products/6fashions-v2/33.jpg";
+import scarf34 from "../../assets/images/products/6fashions-v2/34.jpg";
+import scarf35 from "../../assets/images/products/6fashions-v2/35.jpg";
+import scarf36 from "../../assets/images/products/6fashions-v2/36.jpg";
+import scarf37 from "../../assets/images/products/6fashions-v2/37.jpg";
+import scarf38 from "../../assets/images/products/6fashions-v2/38.jpg";
+import scarf39 from "../../assets/images/products/6fashions-v2/39.jpg";
+import scarf310 from "../../assets/images/products/6fashions-v2/310.jpg";
+import scarf311 from "../../assets/images/products/6fashions-v2/311.jpg";
+import scarf312 from "../../assets/images/products/6fashions-v2/312.jpg";
+// Fashion Scarf images (4 series)
+import scarf41 from "../../assets/images/products/6fashions-v2/41.jpg";
+import scarf42 from "../../assets/images/products/6fashions-v2/42.jpg";
+import scarf43 from "../../assets/images/products/6fashions-v2/43.jpg";
+import scarf44 from "../../assets/images/products/6fashions-v2/44.jpg";
+import scarf45 from "../../assets/images/products/6fashions-v2/45.jpg";
+import scarf46 from "../../assets/images/products/6fashions-v2/46.jpg";
+import scarf47 from "../../assets/images/products/6fashions-v2/47.jpg";
+import scarf48 from "../../assets/images/products/6fashions-v2/48.jpg";
+import scarf49 from "../../assets/images/products/6fashions-v2/49.jpg";
+import scarf410 from "../../assets/images/products/6fashions-v2/410.jpg";
+import scarf411 from "../../assets/images/products/6fashions-v2/411.jpg";
+import scarf412 from "../../assets/images/products/6fashions-v2/412.jpg";
 
 function ProductCategories() {
   const categories = [
@@ -93,18 +114,21 @@ function ProductCategories() {
       title: "Fashion Holiday",
       description:
         "Festive and glamorous pieces featuring sequins, metallics, and statement designs. Perfect for celebrations and special events.",
-      productCount: 4,
+      productCount: 8,
       backgroundColor: colors.background.whiteChocolate,
-      images: [holiday1, holiday2, holiday3, holiday4],
+      images: [holiday1, holiday2, holiday3, holiday4, holiday5, holiday6, holiday7, holiday8],
     },
     {
       id: "scarf",
       title: "Fashion Scarf",
       description:
         "Premium scarves in various materials, patterns, and styles. From silk squares to wool wraps, perfect for any season.",
-      productCount: 8,
+      productCount: 24,
       backgroundColor: colors.background.isabelline,
-      images: [scarf1, scarf2, scarf3, scarf4, scarf5, scarf6, scarf7, scarf8],
+      images: [
+        scarf31, scarf32, scarf33, scarf34, scarf35, scarf36, scarf37, scarf38, scarf39, scarf310, scarf311, scarf312,
+        scarf41, scarf42, scarf43, scarf44, scarf45, scarf46, scarf47, scarf48, scarf49, scarf410, scarf411, scarf412
+      ],
     },
   ];
 
