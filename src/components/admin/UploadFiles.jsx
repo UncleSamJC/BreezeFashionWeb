@@ -11,7 +11,7 @@ function UploadFiles() {
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
-  const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB in bytes
+  const MAX_FILE_SIZE = 15 * 1024 * 1024; // 15MB in bytes
 
   // Load uploaded files on mount
   useEffect(() => {
@@ -51,7 +51,7 @@ function UploadFiles() {
 
     // Check file size
     if (file.size > MAX_FILE_SIZE) {
-      return 'File size must be less than 5MB';
+      return 'File size must be less than 15MB';
     }
 
     return null;
@@ -294,7 +294,7 @@ function UploadFiles() {
               color: colors.text.secondary,
             }}
           >
-            Supported format: PDF only (Max 5MB)
+            Supported format: PDF only (Max 15MB)
           </p>
         </div>
       </div>

@@ -25,8 +25,8 @@ function WhyChooseUs() {
     },
     {
       icon: icon4,
-      title: 'Trusted by 86,000+ Global Buyers',
-      description: 'Serving ​86,000+ international clients (brands/retailers), our products are stocked in major department stores and boutiques worldwide—proven by repeat orders and long-term partnerships.'
+      title: 'Trusted by 200+ Global Buyers',
+      description: 'Serving ​200+ international clients (brands/retailers), our products are stocked in major department stores and boutiques worldwide—proven by repeat orders and long-term partnerships.'
     },
     {
       icon: icon5,
