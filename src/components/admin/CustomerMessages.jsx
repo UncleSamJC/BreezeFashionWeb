@@ -23,10 +23,11 @@ function CustomerMessages() {
     try {
       setIsLoading(true);
 
-      // Fetch all messages, sorted by newest first
+      // Fetch all messages (excluding soft-deleted), sorted by newest first
       const { data, error } = await supabase
         .from('contact_messages')
         .select('*')
+        .or('is_deleted.is.null,is_deleted.eq.false')
         .order('created_at', { ascending: false });
 
       if (error) {
@@ -63,6 +64,31 @@ function CustomerMessages() {
       unreplied,
       thisWeek,
     });
+  };
+
+  // Soft delete message
+  const deleteMessage = async (messageId) => {
+    if (!confirm('Are you sure you want to delete this message?')) return;
+
+    try {
+      const { error } = await supabase
+        .from('contact_messages')
+        .update({ is_deleted: true })
+        .eq('id', messageId);
+
+      if (error) {
+        console.error('Error deleting message:', error);
+        return;
+      }
+
+      // Remove from local state
+      const updatedMessages = messages.filter(msg => msg.id !== messageId);
+      setMessages(updatedMessages);
+      calculateStats(updatedMessages);
+
+    } catch (error) {
+      console.error('Error in deleteMessage:', error);
+    }
   };
 
   // Toggle read/unread status
@@ -305,6 +331,15 @@ function CustomerMessages() {
                   >
                     Date
                   </th>
+                  <th
+                    className="px-6 py-4 text-left text-sm font-medium"
+                    style={{
+                      fontFamily: typography.fontFamily.body,
+                      color: colors.text.primary,
+                    }}
+                  >
+                    Actions
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -357,6 +392,19 @@ function CustomerMessages() {
                       }}
                     >
                       {formatDate(msg.created_at)}
+                    </td>
+                    <td className="px-6 py-4">
+                      <button
+                        onClick={() => deleteMessage(msg.id)}
+                        className="px-3 py-1 rounded text-sm transition-all duration-300 hover:opacity-80"
+                        style={{
+                          backgroundColor: '#fee',
+                          color: '#c33',
+                          fontFamily: typography.fontFamily.body,
+                        }}
+                      >
+                        Delete
+                      </button>
                     </td>
                   </tr>
                 ))}
